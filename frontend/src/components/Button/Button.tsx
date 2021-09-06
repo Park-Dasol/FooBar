@@ -1,5 +1,6 @@
 import React from 'react';
 import './button.css';
+import {MainButton} from '../../styles/button'
 
 interface ButtonProps {
   /**
@@ -29,20 +30,20 @@ interface ButtonProps {
  */
 export const Button = ({
   primary = false,
-  size = 'medium',
+  size,
   backgroundColor,
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  // const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
   return (
-    <button
+    <MainButton
       type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
+      // className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      // style={{ backgroundColor }}
+      size={size}
     >
       {label}
-    </button>
+    </MainButton>
   );
 };

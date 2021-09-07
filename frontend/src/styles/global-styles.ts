@@ -1,18 +1,30 @@
-import { createGlobalStyle } from "styled-components";
-import { normalize } from "styled-normalize";
+import { createGlobalStyle } from 'styled-components';
+import reset from 'styled-reset';
 
-const GlobalStyle = createGlobalStyle`
-  ${normalize}
-
-  html,
-  body {
-    overflow: hidden;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
+export const GlobalStyle = createGlobalStyle`
+    ${reset}
+    * {
+    	margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        align-items: center;
+        background: ${({theme} : {theme: any}) => theme.bgColor};
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        transition: all 0.25s linear;
+        color: ${({theme} : {theme: any}) => theme.textColor};
+    }
+    button { 
+        cursor: pointer;
+        border: none;
+        outline: none;
+        color: ${({theme} : {theme: any}) => theme.bgColor};
+        background-color: ${({theme} : {theme: any}) => theme.textColor};
+    }
 `;
-
-export default GlobalStyle;
- 

@@ -1,16 +1,16 @@
-import React from 'react'
+
 import styled from 'styled-components'
 
-
 export const MyHeader = styled.header`
-    background : ${props => props.backgroundMode === 'dark'? '#171613': '#FEF9F3' };
-    border-bottom: 1px solid ${props => props.backgroundMode === 'dark'? '#FEF9F3': '#656255'};
-    padding: 3px 20px;
-    position:fixed;
-    top: 0px;
-    width: 100%;
-    z-index:-1;
-`;
+  background: ${({theme} : {theme: any}) => theme.bgColor};
+  color: ${({theme} : {theme: any}) => theme.textColor};
+  border-bottom: 1px solid ${({theme} : {theme: any}) => theme.borderColor};
+  padding: 3px 20px;
+  position:fixed;
+  top: 0px;
+  left :0px;
+  width: 100%;
+  `;
 
 export const Grid = styled.div`
   display: grid;

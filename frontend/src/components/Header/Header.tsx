@@ -1,31 +1,24 @@
 import React from 'react';
-
-import { Button } from '../Button/Button';
+import { MenuButton, LogoButton} from '../../styles/button';
 import { MyHeader, Grid, Item} from '../../styles/header';
-import './header.css';
 
-interface HeaderProps {
-  user?: {};
-  backgroundMode?: 'dark' | 'bright';
-  onLogin: () => void;
-  onLogout: () => void;
-  onCreateAccount: () => void;
-}
 
-export const Header = ({ user, onLogin, onLogout, onCreateAccount, backgroundMode}: HeaderProps) => (
-  <MyHeader backgroundMode={'bright'}>
+export const Header = () => {
+  return (
+  <MyHeader>
     <Grid>
       <Item>
-        <Button size="small" onClick={onLogout} label="ABOUT" backgroundMode={'bright'}/>
-        <Button size="small" onClick={onLogout} label="COCKTAILS" backgroundMode={'bright'}/>
-        <Button size="small" onClick={onLogout} label="CONTACT" backgroundMode={'bright'}/>
+        <MenuButton>ABOUT</MenuButton>
+        <MenuButton>COCKTAIL</MenuButton>
+        <MenuButton>CONTACT</MenuButton>
       </Item>
       <Item>
-        <Button size="large" onClick={onLogout} label="FooBar" backgroundMode={'bright'}/>
+        <LogoButton>FooBar</LogoButton>
       </Item>
       <Item>
 
       </Item>
     </Grid>
   </MyHeader>
-);
+  )
+}

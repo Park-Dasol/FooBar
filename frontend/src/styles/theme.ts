@@ -14,9 +14,19 @@ export const darkTheme = {
   gradient: 'linear-gradient(#091236, #1E215D)',
 }
 
+export const whiteTheme = {
+  bgColor: '#FFFFFF',
+  textColor: '#171613',
+  borderColor: '#656255',
+  toggleBorder: '#6B8096',
+  gradient: 'linear-gradient(#091236, #1E215D)',
+}
+
+
 export const theme = {
   lightTheme,
   darkTheme,
+  whiteTheme
 }
 
 export default theme;

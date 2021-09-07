@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
         display: flex;
         flex-direction: column;
         justify-content: center;
-        height: 100vh;
+        height: auto;
         margin: 0;
         padding: 0;
         transition: all 0.25s linear;
@@ -26,5 +26,13 @@ export const GlobalStyle = createGlobalStyle`
         outline: none;
         color: ${({theme} : {theme: any}) => theme.bgColor};
         background-color: ${({theme} : {theme: any}) => theme.textColor};
+    }
+`;
+
+export const MainStyle = createGlobalStyle`
+    ${reset}
+    section {
+        background: ${({theme} : {theme: any}) => theme.bgColor};
+        color: ${({theme} : {theme: any}) => theme.textColor};
     }
 `;

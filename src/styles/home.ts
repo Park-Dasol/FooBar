@@ -52,5 +52,6 @@ export const MainContent = styled.div`
   background: ${({theme} : {theme: any}) => theme.bgColor};
   color: ${({theme} : {theme: any}) => theme.textColor};
   width: 100%;
-  height: 95%;
+  height: calc(100vh - 60px);
+  // position:relative;
 `;

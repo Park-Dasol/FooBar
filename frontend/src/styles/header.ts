@@ -6,11 +6,12 @@ export const MyHeader = styled.header`
   color: ${({theme} : {theme: any}) => theme.textColor};
   border-bottom: 1px solid ${({theme} : {theme: any}) => theme.borderColor};
   padding: 3px 20px;
-  position:fixed;
+  position:sticky;
   top: 0px;
   left :0px;
   width: 100%;
   height: 60px;
+  z-index: 2;
   `;
 
 export const Grid = styled.div`
@@ -19,6 +20,7 @@ export const Grid = styled.div`
   grid-template-rows: 50px 0px;
   grid-gap: 5px;
   color: transparent;
+  font-family: sans-serif;
 `;
 
 

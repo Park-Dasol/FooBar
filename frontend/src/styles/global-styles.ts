@@ -28,11 +28,3 @@ export const GlobalStyle = createGlobalStyle`
         background-color: ${({theme} : {theme: any}) => theme.textColor};
     }
 `;
-
-export const MainStyle = createGlobalStyle`
-    ${reset}
-    section {
-        background: ${({theme} : {theme: any}) => theme.bgColor};
-        color: ${({theme} : {theme: any}) => theme.textColor};
-    }
-`;

@@ -81,6 +81,7 @@ export const FirstTitle = styled.div`
   font-size : 100px;
   text-align: center;
   display: inline;
+  font-family: mermaid;
 
   `;
   
@@ -90,5 +91,6 @@ export const FirstTitle = styled.div`
 
   font-size : 100px;
   text-align: center;
+  font-family: mermaid;
 
 `;

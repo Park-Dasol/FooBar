@@ -13,6 +13,7 @@ export const MenuButton = styled.button`
       display: inline-block;
       line-height: 1;
       padding-right: 40px;
+      
 `;
 
 export const LogoButton = styled.button`
@@ -26,6 +27,7 @@ export const LogoButton = styled.button`
       display: inline-block;
       line-height: 1;
       font-size : 30px;
+      font-family: mermaid;
 `;
 
 

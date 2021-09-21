@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         transition: all 0.25s linear;
+        font-family: roboto-regular;
         color: ${({theme} : {theme: any}) => theme.textColor};
     }
     button { 

@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+@font-face {
+  font-family: "mermaid";         
+  src: url("./assets/font/Mermaid1001.ttf")
+}
+
+
+@font-face {
+  font-family: "roboto-light";         
+  src: url("./assets/font/RobotoSlab-Light.ttf")
+}
+
+@font-face {
+  font-family: "roboto-regular";         
+  src: url("./assets/font/RobotoSlab-Regular.ttf")
+}

@@ -1,8 +1,7 @@
 import React , { useState, useEffect  } from 'react';
 import { MainHome, MainContentWrapper, MainContent } from '../../styles/home';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme, whiteTheme } from '../../styles/theme';
-import { GlobalStyle } from '../../styles/global-styles';
+import { whiteTheme } from '../../styles/theme';
 import {IDrink} from '../../typings/db';
 import RandomRecipe from '../../components/RandomRecipe';
 export const Random = () => {

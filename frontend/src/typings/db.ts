@@ -1,3 +1,5 @@
+export const BASE_URL = "http://localhost:3000"
+
 export interface IDrink {
   idDrink : string;
   strDrink : string;
@@ -50,4 +52,12 @@ export interface IDrink {
   strImageAttribution: string;
   strCreativeCommonsConfirmed: string;
   dateModified: string;
+}
+
+export interface Iingredient {
+    id: number;
+    name :string;
+    backgroundColor : string;
+    fontColor : string;
+    description: string;
 }

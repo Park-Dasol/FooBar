@@ -1,0 +1,45 @@
+{
+  "data" : [
+    {
+      "id": 1,
+      "name" : "Vodka",
+      "backgroundColor" : "#304560",
+      "fontColor" : "#FEF9F3"
+    },
+    {
+      "id": 2,
+      "name" : "Gin",
+      "background-color" : "",
+      "font-color" : "",
+      "description" : ""
+    },
+    {
+      "id": 3,
+      "name" : "Rum",
+      "background-color" : "",
+      "font-color" : "",
+      "description" : ""
+    },
+    {
+      "id": 4,
+      "name" : "Tequila",
+      "background-color" : "",
+      "font-color" : "",
+      "description" : ""
+    },
+    {
+      "id": 5,
+      "name" : "Scotch",
+      "background-color" : "",
+      "font-color" : "",
+      "description" : ""
+    },
+    {
+      "id": 6,
+      "name" : "Brandy",
+      "background-color" : "",
+      "font-color" : "",
+      "description" : ""
+    }
+  ]
+}

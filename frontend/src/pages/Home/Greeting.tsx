@@ -1,9 +1,11 @@
 import React , { useState, useEffect  } from 'react';
 import { MainContentLineWrapper, MainHome, MainContent, FirstTitle, SecondTitle } from '../../styles/home';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme, whiteTheme } from '../../styles/theme';
-import { forEachTrailingCommentRange } from 'typescript';
+import { lightTheme} from '../../styles/theme';
 import {ArchedImage} from '../../styles/images';
+import {BASE_URL} from '../../typings/db';
+
+
 
 type greetType = {
   id: number,
@@ -21,7 +23,7 @@ export const Greeting = () => {
 
   useEffect(() => {
     async function fetchData() {
-      await fetch("http://localhost:3000/data.json")
+      await fetch(`${BASE_URL}/data/greeting.json`)
       .then((response) => response.json())
       .then((response) => {
         const now : number = new Date().getMonth();

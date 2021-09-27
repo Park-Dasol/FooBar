@@ -16,7 +16,7 @@ export const MainHome = styled.section`
   background: ${({theme} : {theme: any}) => theme.bgColor};
   color: ${({theme} : {theme: any}) => theme.textColor};
   width: 80wh;
-  height: calc(100vh - 60px);
+  height: 100vh;
   display: flex;
   justify-content: center;
   padding: 0;

@@ -1,0 +1,105 @@
+{
+  "data" : [
+    {
+      "id": 1,
+      "content" : "No amount of physical contact could match the healing powers of a well made cocktail.",
+      "person" : "David Sedaris"
+    },
+    {
+      "id": 2,
+      "content" : "Hear no evil, speak no evil, and you won’t be invited to cocktail parties.",
+      "person" : "Oscar Wilde"
+    },
+    {
+      "id": 3,
+      "content" : "Here’s to alcohol, the rose colored glasses of life.",
+      "person" : "F. Scott Fitzgerald"
+    },
+    {
+      "id": 4,
+      "content" : "There are two kinds of people I don’t trust: people who don’t drink and people who collect stickers",
+      "person" : "Chelsea Handler"
+    },
+    {
+      "id": 5,
+      "content" : "Alcohol may be man’s worst enemy, but the bible says love your enemy",
+      "person" : "Frank Sinatra"
+    },
+    {
+      "id": 6,
+      "content" : "I drink to make other people more interesting.",
+      "person" : "Ernest Hemingway"
+    },
+    {
+      "id": 7,
+      "content" : "Drink today, and drown all sorrow; you shall perhaps not do it tomorrow; best, while you have it, use your breath; there is no drinking after death.",
+      "person" : "Ben Jonson"
+    },
+    {
+      "id": 8,
+      "content" : "I cook with wine, sometimes I even add it to the food.",
+      "person" : "W.C. Fields"
+    },
+    {
+      "id": 9,
+      "content" : "Drink wine. This is life eternal. This is all that youth will give you. It is the season for wine, roses and drunken friends. Be happy for this moment. This moment is your life.",
+      "person" : "Omar Khayyám"
+    },
+    {
+      "id": 10,
+      "content" : "Electricity is actually made up of extremely tiny particles called electrons, that you cannot see with the naked eye unless you have been drinking",
+      "person" : "Dave Barry"
+    },
+    {
+      "id": 11,
+      "content" : "Writer’s block is a fancy term made up by whiners so they can have an excuse to drink alcohol.",
+      "person" : "Steve Martin"
+    },
+    {
+      "id": 12,
+      "content" : "Beer is proof that God loves us and wants us to be happy.",
+      "person" : "Benjamin Franklin"
+    },
+    {
+      "id": 13,
+      "content" : "I’m on a whisky diet. I’ve lost three days already.",
+      "person" : "Tommy Cooper"
+    },
+    {
+      "id": 14,
+      "content" : "Love makes the world go round? Not at all. Whiskey makes it go round twice as fast.",
+      "person" : "Compton Mackenzie"
+    },
+    {
+      "id": 15,
+      "content" : "Candy is dandy, but liquor is quicker.",
+      "person" : "Ogden Nash"
+    },
+    {
+      "id": 16,
+      "content" : "It’s 4:58 on Friday afternoon. Do you know where your margarita is?",
+      "person" : "Amy Neftzger"
+    },
+    {
+      "id": 17,
+      "content" : "99% of all problems can be solved by money — and for the other 1% there’s alcohol.",
+      "person" : "Quentin R. Bufogle"
+    },
+    {
+      "id": 18,
+      "content" : "I don’t have a drinking problem ‘cept when I can’t get a drink.",
+      "person" : "Tom Waits"
+    },
+    {
+      "id": 19,
+      "content" : "There comes a time in every woman’s life when the only thing that helps is a glass of champagne",
+      "person" : "Bette Davis"
+    },
+    {
+      "id": 20,
+      "content" : "Everybody’s got to believe in something. I believe I’ll have another beer.",
+      "person" : "W.C. Fields"
+    }
+    
+  ]
+}

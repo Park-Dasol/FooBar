@@ -61,3 +61,9 @@ export interface Iingredient {
     fontColor : string;
     description: string;
 }
+
+export interface IQuote {
+  id : number;
+  content : string;
+  person : string;
+}

@@ -35,8 +35,8 @@ export const Ingredient = () => {
             <MainLineContent style={{display:'flex'}}>
               <img src={`${process.env.PUBLIC_URL}/images/vodka.jpg`} alt="" style={{width: '50%', height: '100%', overflow : 'hidden', objectFit: 'cover'}} />
               <IngredientWrapper ingredient={randomIngredient}>
-                <div>{randomIngredient?.name}</div>
-                <div>{randomIngredient?.description}</div>
+                <div style={{padding :"5%", fontSize:"30px"}}>{randomIngredient?.name}</div>
+                <div style={{padding :"5%", height : '80%', overflowY:"scroll"}}>{randomIngredient?.description}</div>
               </IngredientWrapper>
             </MainLineContent>
           </MainContentLineWrapper>

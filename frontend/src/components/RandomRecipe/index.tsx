@@ -1,6 +1,6 @@
 import React , {VFC} from "react";
 import {RecipeWrapper, RandomRecipeImg, RandomRecipeTitle, RandomRecipeDescription, RandomRecipeLink} from '../../styles/randomrecipe';
-import {IDrink} from '../../typings/db';
+import {IDrink} from '../../utils/db';
 interface Props {
   randomRecipe: IDrink
 }

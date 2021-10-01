@@ -1,8 +1,8 @@
 import React , { useState, useEffect  } from 'react';
-import { MainContentLineWrapper, MainHome, MainLineContent, FirstTitle, SecondTitle } from '../../styles/home';
+import { MainContentLineWrapper, Section, MainLineContent, FirstTitle, SecondTitle } from '../../styles/home';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from '../../styles/theme';
-import {Iingredient, BASE_URL} from '../../typings/db';
+import {Iingredient, BASE_URL} from '../../utils/db';
 import {IngredientWrapper} from '../../styles/ingredient'
 
 export const Ingredient = () => {
@@ -30,7 +30,7 @@ export const Ingredient = () => {
   return (
     <ThemeProvider theme={lightTheme} >
       <>
-        <MainHome>
+        <Section>
           <MainContentLineWrapper>
             <MainLineContent style={{display:'flex'}}>
               <img src={`${process.env.PUBLIC_URL}/images/vodka.jpg`} alt="" style={{width: '50%', height: '100%', overflow : 'hidden', objectFit: 'cover'}} />
@@ -40,7 +40,7 @@ export const Ingredient = () => {
               </IngredientWrapper>
             </MainLineContent>
           </MainContentLineWrapper>
-        </MainHome>
+        </Section>
       </>
     </ThemeProvider>
    

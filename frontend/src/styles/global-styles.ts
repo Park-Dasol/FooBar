@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
         transition: all 0.25s linear;
         font-family: roboto-regular;
         color: ${({theme} : {theme: any}) => theme.textColor};
+        overflow-x:hidden;
     }
     button { 
         cursor: pointer;

@@ -1,8 +1,8 @@
 import React , { useState, useEffect  } from 'react';
-import { MainHome, MainContentWrapper, MainContent } from '../../styles/home';
+import { Section, MainContentWrapper, MainContent } from '../../styles/home';
 import { ThemeProvider } from 'styled-components';
 import { whiteTheme } from '../../styles/theme';
-import {IDrink} from '../../typings/db';
+import {IDrink} from '../../utils/db';
 import RandomRecipe from '../../components/RandomRecipe';
 export const Random = () => {
   const [randomRecipe, setRandomRecipe] = useState<IDrink[] | []>([])
@@ -24,7 +24,7 @@ export const Random = () => {
   return (
     <ThemeProvider theme={whiteTheme}>
       <>
-        <MainHome>
+        <Section>
           <MainContentWrapper>
            <MainContent>
             <div style={{display:'flex', flexDirection:'column', textAlign:'center'}}>
@@ -37,7 +37,7 @@ export const Random = () => {
  
            </MainContent>
           </MainContentWrapper>
-        </MainHome>
+        </Section>
       </>
     </ThemeProvider>
   )

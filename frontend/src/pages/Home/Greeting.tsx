@@ -1,9 +1,9 @@
 import React , { useState, useEffect  } from 'react';
-import { MainContentLineWrapper, MainHome, MainContent, FirstTitle, SecondTitle } from '../../styles/home';
+import { MainContentLineWrapper, Section, MainContent, FirstTitle, SecondTitle } from '../../styles/home';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme} from '../../styles/theme';
 import {ArchedImage} from '../../styles/images';
-import {BASE_URL} from '../../typings/db';
+import {BASE_URL} from '../../utils/db';
 
 
 
@@ -40,7 +40,7 @@ export const Greeting = () => {
   return (
     <ThemeProvider theme={lightTheme}>
       <>
-        <MainHome>
+        <Section>
           <MainContentLineWrapper>
             <MainContent>
               <FirstTitle>{data?.title.first_line}</FirstTitle>
@@ -50,7 +50,7 @@ export const Greeting = () => {
               
             </MainContent>
           </MainContentLineWrapper>
-        </MainHome>
+        </Section>
       </>
     </ThemeProvider>
    

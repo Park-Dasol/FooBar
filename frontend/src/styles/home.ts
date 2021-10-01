@@ -12,11 +12,11 @@ export const MainWrapper = styled.div`
   `;
 
 // each section
-export const MainHome = styled.section`
+export const Section = styled.section`
   background: ${({theme} : {theme: any}) => theme.bgColor};
   color: ${({theme} : {theme: any}) => theme.textColor};
-  width: 80wh;
-  height: 100vh;
+  width: 100%;
+  height: calc(100vh - 60px);
   display: flex;
   justify-content: center;
   padding: 0;

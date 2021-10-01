@@ -1,8 +1,8 @@
 import React , {useEffect, useState}from 'react';
-import { MainHome, MainContent } from '../../styles/home';
+import { Section, MainContent } from '../../styles/home';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme } from '../../styles/theme';
-import {BASE_URL, IQuote} from '../../typings/db';
+import {BASE_URL, IQuote} from '../../utils/db';
 import { GlobalStyle } from '../../styles/global-styles';
 
 export const Quote = () => {
@@ -25,12 +25,12 @@ export const Quote = () => {
   return (
     <ThemeProvider theme={darkTheme}>
       <>
-        <MainHome>
+        <Section>
           <MainContent style={{flexDirection:"column", justifyContent:"center", width:"60%"}}>
             <div style={{fontSize:"80px", textAlign:"center", width:"60%"}}>"{quote?.content}"</div>
             <div style={{fontSize:"30px", marginTop:"60px", alignSelf:"flex-end"}}>- {quote?.person}</div>
           </MainContent>
-        </MainHome>
+        </Section>
       </>
     </ThemeProvider>
    

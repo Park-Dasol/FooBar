@@ -11,3 +11,11 @@ export const ArchedImage = styled.img`
   position:absolute;
  bottom : 0;
   `;
+
+export const ArchedCocktail = styled.img`
+  border-radius : 500px 500px 0 0;
+  width: 40%;
+  margin-left : 12%;
+  margin-right: 5%;
+  object-fit:cover;
+`;

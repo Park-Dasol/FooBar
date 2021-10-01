@@ -4,7 +4,7 @@ import { Section,MainContentLineWrapper,  MainWrapper } from '../../styles/home'
 import SearchBox from '../../components/SearchBox'
 import {useCocktailContext} from '../../utils/cocktailContext';
 import {IDrink} from '../../utils/db'
-
+import {ArchedCocktail} from '../../styles/images'
 
 
 export const Cocktail = () => {
@@ -41,14 +41,35 @@ export const Cocktail = () => {
           </MainContentLineWrapper>
         </Section>
         <Section style={{display: cocktail? 'flex' : 'none'}}>
-          <MainContentLineWrapper>
-            <div>{cocktailDetail?.strDrink}</div>
-            <div>
-              <img src={cocktailDetail?.strDrinkThumb} alt="" />
+          <MainContentLineWrapper style={{display:'flex',  flexDirection:'column',justifyContent:'center'}}>
+            <div style={{height: '20%', fontSize:"60px", paddingLeft:"10%"}}>{cocktailDetail?.strDrink}</div>
+            <div style={{display:'flex', height:"70%"}}>
+              <ArchedCocktail src={cocktailDetail?.strDrinkThumb} alt="" />
               <div>
-                <div>Glass : {cocktailDetail?.strGlass}</div>
-                <div>Ingredient : {ingredient}</div>
-                <div>Recipe : {cocktailDetail?.strInstructions}</div>
+                <div>
+                  <div style={{fontWeight:700}}>Category </div>
+                  <div>{cocktailDetail?.strCategory}</div>
+                </div>
+                <div>
+                  <div style={{fontWeight:700}}>Alcoholic </div>
+                  <div>{cocktailDetail?.strAlcoholic}</div>
+                </div>
+                <div>
+                  <div style={{fontWeight:700}}>IBA Category </div>
+                  <div>{cocktailDetail?.strIBA}</div>
+                </div>
+                <div>
+                  <div style={{fontWeight:700}}>Glass</div> 
+                  <div>{cocktailDetail?.strGlass}</div>
+                </div>
+                <div>
+                  <div style={{fontWeight:700}}>Ingredient </div>
+                  <div>{ingredient}</div>
+                </div>
+                <div>
+                  <div style={{fontWeight:700}}>Recipe </div>
+                  <div>{cocktailDetail?.strInstructions}</div>
+                </div>
               </div>
             </div>        
           </MainContentLineWrapper>

@@ -67,3 +67,4 @@ export interface IQuote {
   content : string;
   person : string;
 }
+

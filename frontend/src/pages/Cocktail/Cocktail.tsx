@@ -54,6 +54,18 @@ export const Cocktail = () => {
     setCocktail('11728')
   }, [])
 
+  const getCokctail = useCallback((e)=> {
+    console.log(e.target.textContent)
+    // fetch(`www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
+    fetch(`www.thecocktaildb.com/api/json/v1/1/search.php?s=${e.target.textContent}`)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log('hi')
+      }
+        // console.log(response.drinks)
+)
+  }, [])
+
   const onChangeSearch = useCallback( async (e) => {
     console.log(e.target.value)
     // console.log(cocktailList)
@@ -78,8 +90,8 @@ export const Cocktail = () => {
               <SearchBox onChangeSearch={onChangeSearch}/>
               <div style={{display: autoComplete? 'static' : 'none', width: '100%', maxHeight:'30%', overflowY:'scroll'}}>
                 {autoComplete.map(recom => 
-                  (<li style={{listStyle:'none'}}>
-                    <span>{recom}</span>
+                  (<li onClick={getCokctail} style={{listStyle:'none', height:"20px", cursor:"pointer", marginTop:"3px",marginBottom:"3px"}}>
+                    <span style={{ backgroundColor:"#FADDA2", borderRadius:"50px"}}>{recom}</span>
                   </li>)
                 )}
               </div>

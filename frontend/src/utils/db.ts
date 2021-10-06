@@ -1,3 +1,5 @@
+import { NumberLiteralType } from "typescript"
+
 export const BASE_URL = "http://localhost:3000"
 
 export interface IDrink {
@@ -68,3 +70,7 @@ export interface IQuote {
   person : string;
 }
 
+export interface ICocktail {
+  id : number;
+  name: string;
+}

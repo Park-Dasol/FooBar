@@ -9,9 +9,10 @@ import { lightTheme, darkTheme } from './styles/theme';
 import { GlobalStyle } from './styles/global-styles';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import {MyCocktailContext} from './utils/cocktailContext'
+import {ICocktail} from './utils/db'
 
 function App() {
-  const [cocktail, setCocktail] = useState<string>((''))
+  const [cocktail, setCocktail] = useState<ICocktail>();
   return (
       <ThemeProvider theme={lightTheme}>
       <>

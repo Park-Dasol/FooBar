@@ -3,7 +3,7 @@ import { Section,MainContentLineWrapper,  MainWrapper } from '../../styles/home'
 
 import SearchBox from '../../components/SearchBox'
 import {useCocktailContext} from '../../utils/cocktailContext';
-import {IDrink, BASE_URL} from '../../utils/db'
+import {IDrink, BASE_URL, ICocktail} from '../../utils/db'
 import {ArchedCocktail} from '../../styles/images'
 import { NONAME } from 'dns';
 
@@ -11,15 +11,30 @@ import { NONAME } from 'dns';
 
 export const Cocktail = () => {
   
-  const { cocktail, setCocktail } = useCocktailContext()
+  const {cocktail, setCocktail } = useCocktailContext()
   const [cocktailDetail, setCocktailDetail] = useState<IDrink>()
   const [ingredient, setIngredient] = useState<string>('')
   const [cocktailList, setCocktailList] = useState<any[]>([]);
   const [autoComplete, setAutoComplete] =  useState<any[]>([]);
+  const [showDetail, setShowDetail] =  useState<boolean>(false);
 
-  useEffect(() => {
+  useEffect(()=> {
+    async function fetchCocktailList() {
+      await fetch(`${BASE_URL}/data/cocktails.json`)
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response.data)
+        setCocktailList(response.data)
+      })
+    }
+      fetchCocktailList()
+  }, [])
+
+  const onSubmitForm = useCallback((e)=> {
+    e.preventDefault()
+    setShowDetail(false)
     async function fetchCocktail() {
-      await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktail}`)
+      await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktail?.id}`)
       .then((response) => response.json())
       .then((response) => {
         console.log(response)
@@ -33,65 +48,30 @@ export const Cocktail = () => {
     }
     if (cocktail) {
       fetchCocktail()
+      setShowDetail(true)
     }
-  }, [cocktail]);
-
-  useEffect(()=> {
-    async function fetchCocktailList() {
-      await fetch(`${BASE_URL}/data/cocktails.json`)
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response.data)
-        setCocktailList(response.data)
-      })
-    }
-      fetchCocktailList()
- 
-  }, [])
-
-  const onSubmitForm = useCallback((e)=> {
-    e.preventDefault()
-    setCocktail('11728')
-  }, [])
-
-  const getCokctail = useCallback((e)=> {
-    console.log(e.target.textContent)
-    // fetch(`www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita`)
-    fetch(`www.thecocktaildb.com/api/json/v1/1/search.php?s=${e.target.textContent}`)
-      .then((response) => response.json())
-      .then((response) => {
-        console.log('hi')
-      }
-        // console.log(response.drinks)
-)
-  }, [])
+  }, [cocktail])
 
   const onChangeSearch = useCallback( async (e) => {
-    console.log(e.target.value)
-    // console.log(cocktailList)
     const autoCompleteList = cocktailList?.filter(cocktail => {
       const regex = new RegExp(e.target.value, 'gi')
-      // console.log(cocktail)
-      return cocktail.match(regex)
+      return cocktail.name.match(regex)
     })
-    console.log(autoCompleteList)
     setAutoComplete(autoCompleteList)
   }, [cocktailList])
 
-  // console.log('aa', cocktailList)
 
-  
   return (
       <MainWrapper>
          <Section>
           <MainContentLineWrapper style={{display:'flex', flexDirection:"row"}}>
             <img src={`${process.env.PUBLIC_URL}/images/searchCut.png`} alt="search" style={{height:'100%', objectFit:'contain', bottom: 0, position: 'relative'}}/>
             <div style={{width: '60%', height:"100%", display:'flex', justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
-              <SearchBox onChangeSearch={onChangeSearch}/>
+              <SearchBox onChangeSearch={onChangeSearch} onSubmitForm={onSubmitForm}/>
               <div style={{display: autoComplete? 'static' : 'none', width: '100%', maxHeight:'30%', overflowY:'scroll'}}>
                 {autoComplete.map(recom => 
-                  (<li onClick={getCokctail} style={{listStyle:'none', height:"20px", cursor:"pointer", marginTop:"3px",marginBottom:"3px"}}>
-                    <span style={{ backgroundColor:"#FADDA2", borderRadius:"50px"}}>{recom}</span>
+                  (<li onClick={()=> setCocktail({id:parseInt(recom.id), name:recom.name})} style={{listStyle:'none', height:"20px", cursor:"pointer", marginTop:"3px",marginBottom:"3px"}}>
+                    <span style={{ backgroundColor:"#FADDA2", borderRadius:"50px"}} data-id={parseInt(recom.id)}>{recom.name}</span>
                   </li>)
                 )}
               </div>
@@ -99,7 +79,7 @@ export const Cocktail = () => {
             </div>
           </MainContentLineWrapper>
         </Section>
-        <Section style={{display: cocktail? 'flex' : 'none'}}>
+        <Section style={{display: showDetail? 'flex' : 'none'}}>
           <MainContentLineWrapper style={{display:'flex',  flexDirection:'column',justifyContent:'center'}}>
             <div style={{height: '20%', fontSize:"60px", paddingLeft:"10%"}}>{cocktailDetail?.strDrink}</div>
             <div style={{display:'flex', height:"70%"}}>

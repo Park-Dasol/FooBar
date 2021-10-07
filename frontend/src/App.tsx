@@ -10,6 +10,7 @@ import { GlobalStyle } from './styles/global-styles';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import {MyCocktailContext} from './utils/cocktailContext'
 import {ICocktail} from './utils/db'
+import { Footer } from './components/Footer/Footer';
 
 function App() {
   const [cocktail, setCocktail] = useState<ICocktail>();
@@ -24,6 +25,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/cocktail" component={Cocktail} />
             </Switch>
+            <Footer/>
           </BrowserRouter>
         </MyCocktailContext.Provider>
       </>

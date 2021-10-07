@@ -5,14 +5,13 @@ import SearchBox from '../../components/SearchBox'
 import {useCocktailContext} from '../../utils/cocktailContext';
 import {IDrink, BASE_URL, ICocktail} from '../../utils/db'
 import {ArchedCocktail} from '../../styles/images'
-import { NONAME } from 'dns';
 
 
 
 export const Cocktail = () => {
   
   const {cocktail, setCocktail } = useCocktailContext()
-  const [cocktailDetail, setCocktailDetail] = useState<IDrink>()
+  const [cocktailDetail, setCocktailDetail] = useState<IDrink |undefined>()
   const [ingredient, setIngredient] = useState<string>('')
   const [cocktailList, setCocktailList] = useState<any[]>([]);
   const [autoComplete, setAutoComplete] =  useState<any[]>([]);
@@ -30,13 +29,18 @@ export const Cocktail = () => {
       fetchCocktailList()
   }, [])
 
+  useEffect(()=> {
+    if (!cocktailDetail) {
+      setShowDetail(false)
+    }
+  }, [cocktailDetail])
+
   const onSubmitForm = useCallback((e)=> {
     e.preventDefault()
     setShowDetail(false)
     setInputValue('')
     setAutoComplete([])
     // window.location.replace('#section2')
-   
     async function fetchCocktail() {
       await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktail?.id}`)
       .then((response) => response.json())
@@ -82,7 +86,7 @@ export const Cocktail = () => {
               <SearchBox onChangeSearch={onChangeSearch} onSubmitForm={onSubmitForm} inputValue={inputValue} onFocus={onFocus}/>
               <div style={{display: autoComplete? 'static' : 'none', width: '100%', maxHeight:'30%', overflowY:'scroll'}}>
                 {autoComplete.map(recom => 
-                  (<li onClick={()=> (setCocktail({id:parseInt(recom.id), name:recom.name}), setInputValue(recom.name))} key={recom.id} style={{listStyle:'none', height:"20px", cursor:"pointer", marginTop:"3px",marginBottom:"3px"}}>
+                  (<li onClick={()=> (setCocktail({id:parseInt(recom.id), name:recom.name}), setInputValue(recom.name), setCocktailDetail(undefined))} key={recom.id} style={{listStyle:'none', height:"20px", cursor:"pointer", marginTop:"3px",marginBottom:"3px"}}>
                     <span style={{ backgroundColor:"#FADDA2", borderRadius:"50px"}} data-id={parseInt(recom.id)}>{recom.name}</span>
                   </li>)
                 )}

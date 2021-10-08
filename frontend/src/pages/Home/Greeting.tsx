@@ -40,7 +40,7 @@ export const Greeting = () => {
   return (
     <ThemeProvider theme={lightTheme}>
       <>
-        <Section>
+        <Section id="greetingSection">
           <MainContentLineWrapper>
             <MainContent>
               <FirstTitle>{data?.title.first_line}</FirstTitle>

@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         transition: all 0.25s linear;
-        font-family: roboto-regular;
+        font-family: NotoSerifRegular;
         color: ${({theme} : {theme: any}) => theme.textColor};
         overflow-x:hidden;
     }
@@ -26,7 +26,11 @@ export const GlobalStyle = createGlobalStyle`
         cursor: pointer;
         border: none;
         outline: none;
+        font-family: NotoSerifRegular;
         color: ${({theme} : {theme: any}) => theme.bgColor};
         background-color: ${({theme} : {theme: any}) => theme.textColor};
+    }
+    input {
+        font-family: NotoSerifRegular;
     }
 `;

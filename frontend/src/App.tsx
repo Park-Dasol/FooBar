@@ -1,27 +1,31 @@
-import React, {useState} from 'react';
-// import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {Header} from './components/Header/Header';
 import {Home} from './pages/Home/Home';
 import {Cocktail} from './pages/Cocktail/Cocktail';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme } from './styles/theme';
+import { lightTheme, darkTheme, whiteTheme } from './styles/theme';
 import { GlobalStyle } from './styles/global-styles';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import {MyCocktailContext} from './utils/cocktailContext'
-import {ICocktail} from './utils/db'
+import {ICocktail, Itheme} from './utils/db'
 import { Footer } from './components/Footer/Footer';
 import {About} from './pages/About/About'
 import { Contact } from './pages/Contact';
+import { MyHeaderThemeContext } from './utils/headerContext';
+
 function App() {
   const [cocktail, setCocktail] = useState<ICocktail>();
+  const [headerTheme, setHeaderTheme] = useState<Itheme>(lightTheme);
+  
   return (
       <ThemeProvider theme={lightTheme}>
       <>
         <GlobalStyle />
         <MyCocktailContext.Provider value= {{ cocktail, setCocktail }}>
-          <BrowserRouter>
-            <Header />
+          <MyHeaderThemeContext.Provider value= {{ headerTheme, setHeaderTheme }}>
+            <BrowserRouter>
+              <Header />
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/About" component={About} />
@@ -30,6 +34,7 @@ function App() {
             </Switch>
             <Footer/>
           </BrowserRouter>
+          </MyHeaderThemeContext.Provider>
         </MyCocktailContext.Provider>
       </>
     </ThemeProvider>

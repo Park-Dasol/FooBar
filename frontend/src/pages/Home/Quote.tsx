@@ -15,7 +15,7 @@ export const Quote = () => {
       .then((response) => {
         // console.log(response.data)
         const index = Math.floor(Math.random() * 20);
-        console.log(response.data[index])
+        // console.log(response.data[index])
         setQuote(response.data[index])
       })
     }

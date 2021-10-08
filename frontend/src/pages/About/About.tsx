@@ -2,10 +2,12 @@ import React,{useCallback, useEffect, useState} from 'react';
 import { Section,MainContentLineWrapper,  MainWrapper } from '../../styles/home';
 import AboutItem from '../../components/AboutItem';
 import {BASE_URL, IAbout} from '../../utils/db';
-
+import {useHeaderThemeContext} from '../../utils/headerContext'
+import { lightTheme } from '../../styles/theme';
 
 export const About = () => {
   const [abouts, setAbouts] = useState<IAbout[] | []>([])
+  const { headerTheme, setHeaderTheme } = useHeaderThemeContext()
 
   useEffect(()=> {
     async function fetchAboutItems() {
@@ -16,6 +18,7 @@ export const About = () => {
       })
     }
     fetchAboutItems()
+    setHeaderTheme(lightTheme)
   }, [])
   
   return (
@@ -37,7 +40,6 @@ export const About = () => {
             <div style={{display:"flex", alignSelf:"flex-end"}}>
               <AboutItem about={abouts? abouts[2]: undefined} ></AboutItem>
               <AboutItem about={abouts? abouts[3]: undefined} ></AboutItem>
-   
 
             </div>
 

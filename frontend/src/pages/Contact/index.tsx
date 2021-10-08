@@ -4,11 +4,15 @@ import {BASE_URL, IAbout} from '../../utils/db';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme } from '../../styles/theme';
 import ContactForm from '../../components/ContactForm';
-
+import {useHeaderThemeContext} from '../../utils/headerContext'
 
 export const Contact = () => {
-
+  const { headerTheme, setHeaderTheme } = useHeaderThemeContext()
   
+  useEffect(()=> {
+    setHeaderTheme(darkTheme)
+  }, [])
+
   return (
     <ThemeProvider theme={darkTheme}>
       <>

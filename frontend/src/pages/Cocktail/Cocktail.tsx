@@ -5,7 +5,8 @@ import SearchBox from '../../components/SearchBox'
 import {useCocktailContext} from '../../utils/cocktailContext';
 import {IDrink, BASE_URL, ICocktail} from '../../utils/db'
 import {ArchedCocktail} from '../../styles/images'
-
+import {useHeaderThemeContext} from '../../utils/headerContext'
+import { lightTheme } from '../../styles/theme';
 
 
 export const Cocktail = () => {
@@ -17,6 +18,8 @@ export const Cocktail = () => {
   const [autoComplete, setAutoComplete] =  useState<any[]>([]);
   const [showDetail, setShowDetail] =  useState<boolean>(false);
   const [inputValue, setInputValue] =  useState<string>('');
+  const { headerTheme, setHeaderTheme } = useHeaderThemeContext()
+
 
   useEffect(()=> {
     async function fetchCocktailList() {
@@ -27,6 +30,7 @@ export const Cocktail = () => {
       })
     }
       fetchCocktailList()
+      setHeaderTheme(lightTheme)
   }, [])
 
   useEffect(()=> {

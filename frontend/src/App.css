@@ -52,3 +52,7 @@
   font-family: "roboto-regular";         
   src: url("./assets/font/RobotoSlab-Regular.ttf")
 }
+@font-face {
+  font-family: "NotoSerifRegular";         
+  src: url("./assets/font/NotoSerif-Regular.ttf")
+}

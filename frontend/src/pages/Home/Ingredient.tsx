@@ -27,6 +27,7 @@ export const Ingredient = () => {
     fetchIngredient()
   }, [])
 
+
   return (
     <ThemeProvider theme={lightTheme} >
       <>

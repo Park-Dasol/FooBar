@@ -80,3 +80,11 @@ export interface IAbout {
   title: string;
   description : string;
 }
+
+export interface Itheme {
+  bgColor: string;
+  textColor: string;
+  borderColor:  string;
+  toggleBorder:  string;
+  gradient:  string;
+}

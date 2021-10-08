@@ -1,11 +1,15 @@
-import React , { useState, useEffect  } from 'react';
+import React , { useState, useEffect, useCallback  } from 'react';
 import { Section, MainContentWrapper, MainContent } from '../../styles/home';
 import { ThemeProvider } from 'styled-components';
 import { whiteTheme } from '../../styles/theme';
 import {IDrink} from '../../utils/db';
 import RandomRecipe from '../../components/RandomRecipe';
+import {useCocktailContext} from '../../utils/cocktailContext';
+
+
 export const Random = () => {
   const [randomRecipe, setRandomRecipe] = useState<IDrink[] | []>([])
+  const {cocktail, setCocktail } = useCocktailContext()
 
   useEffect(() => {
     async function fetchRecipe() {
@@ -20,7 +24,11 @@ export const Random = () => {
     }
   }, [randomRecipe])
 
-  console.log(randomRecipe)
+  const onMoveRecipe = useCallback((e, r) => {
+    // e.preventDefault()
+    setCocktail({id : r.idDrink, name : r.strDrink})
+  }, [])
+
   return (
     <ThemeProvider theme={whiteTheme}>
       <>
@@ -32,7 +40,7 @@ export const Random = () => {
               <div style={{fontSize: '25px', marginTop:'20px'}}>This is our recommendations for you</div>
             </div>
             <div style={{display:'flex', flexDirection:'row'}}>
-                {randomRecipe?.map((r)=> <RandomRecipe randomRecipe={r}/>)}
+                {randomRecipe?.map((r)=> <RandomRecipe onMoveRecipe={(e)=> onMoveRecipe(e, r)} randomRecipe={r}/>)}
             </div>
  
            </MainContent>

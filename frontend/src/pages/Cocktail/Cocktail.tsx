@@ -35,29 +35,36 @@ export const Cocktail = () => {
     }
   }, [cocktailDetail])
 
+  useEffect(()=> {
+    if(cocktail) {
+    fetchCocktail()
+    setShowDetail(true)
+    }
+  }, [])
+
+  async function fetchCocktail() {
+    await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktail?.id}`)
+    .then((response) => response.json())
+    .then((response) => {
+      setCocktailDetail(response.drinks[0])
+      for (var i = 1; i <=15; i++) {
+        if (response.drinks[0]['strIngredient' + i]) {
+          setIngredient(prevState =>  ((prevState ? prevState + ', ' : '') +  response.drinks[0]['strIngredient' + i] + ' ' + response.drinks[0]['strMeasure' + i]))
+        } 
+      }
+      const section = document.getElementById('section2')
+      window.scrollTo({
+        top: section?.offsetTop,
+        behavior: 'smooth',
+      })
+    })
+  }
+
   const onSubmitForm = useCallback((e)=> {
     e.preventDefault()
     setShowDetail(false)
     setInputValue('')
     setAutoComplete([])
-    // window.location.replace('#section2')
-    async function fetchCocktail() {
-      await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktail?.id}`)
-      .then((response) => response.json())
-      .then((response) => {
-        setCocktailDetail(response.drinks[0])
-        for (var i = 1; i <=15; i++) {
-          if (response.drinks[0]['strIngredient' + i]) {
-            setIngredient(prevState =>  ((prevState ? prevState + ', ' : '') +  response.drinks[0]['strIngredient' + i] + ' ' + response.drinks[0]['strMeasure' + i]))
-          } 
-        }
-        const section = document.getElementById('section2')
-        window.scrollTo({
-          top: section?.offsetTop,
-          behavior: 'smooth',
-        })
-      })
-    }
     if (cocktail) {
       fetchCocktail()
       setShowDetail(true)

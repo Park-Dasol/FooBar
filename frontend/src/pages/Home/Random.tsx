@@ -24,8 +24,7 @@ export const Random = () => {
     }
   }, [randomRecipe])
 
-  const onMoveRecipe = useCallback((e, r) => {
-    // e.preventDefault()
+  const onMoveRecipe = useCallback((r) => {
     setCocktail({id : r.idDrink, name : r.strDrink})
   }, [])
 
@@ -40,9 +39,8 @@ export const Random = () => {
               <div style={{fontSize: '25px', marginTop:'20px'}}>This is our recommendations for you</div>
             </div>
             <div style={{display:'flex', flexDirection:'row'}}>
-                {randomRecipe?.map((r)=> <RandomRecipe onMoveRecipe={(e)=> onMoveRecipe(e, r)} randomRecipe={r}/>)}
+                {randomRecipe?.map((r)=> <RandomRecipe onMoveRecipe={()=> onMoveRecipe(r)} randomRecipe={r} key={r.idDrink}/>)}
             </div>
- 
            </MainContent>
           </MainContentWrapper>
         </Section>

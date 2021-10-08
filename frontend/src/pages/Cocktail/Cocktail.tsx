@@ -88,7 +88,7 @@ export const Cocktail = () => {
       <MainWrapper>
          <Section id={'section1'}>
           <MainContentLineWrapper style={{display:'flex', flexDirection:"row"}}>
-            <img src={`${process.env.PUBLIC_URL}/images/searchCut.png`} alt="search" style={{height:'100%', objectFit:'contain', bottom: 0, position: 'relative'}}/>
+            <img src={`${process.env.PUBLIC_URL}/images/about.png`} alt="search" style={{height:'100%', objectFit:'contain', bottom: 0, position: 'relative'}}/>
             <div style={{width: '60%', height:"100%", display:'flex', justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
               <SearchBox onChangeSearch={onChangeSearch} onSubmitForm={onSubmitForm} inputValue={inputValue} onFocus={onFocus}/>
               <div style={{display: autoComplete? 'static' : 'none', width: '100%', maxHeight:'30%', overflowY:'scroll'}}>

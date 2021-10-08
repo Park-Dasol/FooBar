@@ -17,7 +17,7 @@ export const Section = styled.section`
   color: ${({theme} : {theme: any}) => theme.textColor};
   width: 100%;
   // height: calc(100vh - 60px);
-  height: 110vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   padding: 0;

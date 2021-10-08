@@ -9,7 +9,9 @@ export const Header = () => {
   <MyHeader>
     <Grid>
       <Item>
+        <Link to="/about">
         <MenuButton>ABOUT</MenuButton>
+        </Link>
         <Link to="/cocktail">
           <MenuButton>COCKTAIL</MenuButton>
         </Link>

@@ -74,3 +74,9 @@ export interface ICocktail {
   id : number;
   name: string;
 }
+
+export interface IAbout {
+  id : number;
+  title: string;
+  description : string;
+}

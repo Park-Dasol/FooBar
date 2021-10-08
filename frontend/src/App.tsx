@@ -11,6 +11,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import {MyCocktailContext} from './utils/cocktailContext'
 import {ICocktail} from './utils/db'
 import { Footer } from './components/Footer/Footer';
+import {About} from './pages/About/About'
 
 function App() {
   const [cocktail, setCocktail] = useState<ICocktail>();
@@ -23,6 +24,7 @@ function App() {
             <Header />
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/About" component={About} />
               <Route exact path="/cocktail" component={Cocktail} />
             </Switch>
             <Footer/>

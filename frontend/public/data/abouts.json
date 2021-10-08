@@ -1,0 +1,24 @@
+{
+  "data" : [
+    {
+      "id": 1,
+      "title": "4 Seasons, 4 Vibes",
+      "description": "Anyone else notice how every season has a different vibe and feeling? We prepared 4 different mains and 4 different greetings for you. Visit FooBar every season so you can feel our 4 different vibes!"
+    },
+    {
+      "id": 2,
+      "title": "Perfect Sip for Today",
+      "description": "Foobar gives 3 recipes of cocktails randomly. Don't save things for a special occasion. Every day of your life is a special occasion. Try special cocktail for your special day!"
+    },
+    {
+      "id": 3,
+      "title": "A Little Bit of Toast Talk",
+      "description": "We firmly believe that cocktails are better when shared with friends and conversation. Should you find yourself in need of a conversation starter to kick off your moment."
+    },
+    {
+      "id": 4,
+      "title": "You Know It All",
+      "description": "You are new to Cocktails? Don’t worry. we offers breif explanations of magic ingredients of alcohol drinks. A bit by bit, You will get to be familiar with not only  Foobar  also cocktails."
+    }
+  ]
+}

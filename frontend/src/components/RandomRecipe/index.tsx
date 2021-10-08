@@ -1,4 +1,4 @@
-import React , {VFC} from "react";
+import React , {useEffect, useState, VFC} from "react";
 import {RecipeWrapper, RandomRecipeImg, RandomRecipeTitle, RandomRecipeDescription, RandomRecipeLink} from '../../styles/randomrecipe';
 import {IDrink} from '../../utils/db';
 import { Link } from "react-router-dom";
@@ -8,10 +8,24 @@ interface Props {
 }
 
 const RandomRecipe :VFC<Props>= ({randomRecipe, onMoveRecipe}) => {
+  const [border, setBorder] = useState<string>('')
 
+  useEffect(()=>{
+
+    //image irregular border shape value
+    let RandomBorder: string = '';
+    for (var i =0 ; i < 4; i++) {
+      RandomBorder += (Math.floor(Math.random()*30) + 40).toString()  + '% '
+    }
+    RandomBorder += '/';
+    for (var i =0 ; i < 4; i++) {
+      RandomBorder += ' ' + (Math.floor(Math.random()*30) + 40).toString() + '%'
+    }
+    setBorder(RandomBorder)
+  },[])
   return (
     <RecipeWrapper>
-      <RandomRecipeImg src={randomRecipe.strDrinkThumb} alt="" />
+      <RandomRecipeImg src={randomRecipe.strDrinkThumb} alt="" RandomBorder={border}/>
       <hr />
       <RandomRecipeTitle>{randomRecipe.strDrink}</RandomRecipeTitle>
       <hr />

@@ -5,6 +5,7 @@ import { whiteTheme } from '../../styles/theme';
 import {IDrink} from '../../utils/db';
 import RandomRecipe from '../../components/RandomRecipe';
 import {useCocktailContext} from '../../utils/cocktailContext';
+import {GiDiamonds} from 'react-icons/gi'
 
 
 export const Random = () => {
@@ -33,10 +34,11 @@ export const Random = () => {
       <>
         <Section>
           <MainContentWrapper>
-           <MainContent>
+           <MainContent style={{display:"flex", flexDirection:"column", justifyContent:"center"}}>
             <div style={{display:'flex', flexDirection:'column', textAlign:'center'}}>
               <div style={{fontSize: '40px', marginTop:'20px'}}>Perfect Sip for Today</div>
-              <div style={{fontSize: '25px', marginTop:'20px'}}>This is our recommendations for you</div>
+              <div style={{fontSize:"20px", marginTop:"20px"}}><GiDiamonds/></div>
+              <div style={{fontSize: '25px', marginTop:'20px', marginBottom:"20px"}}>This is our recommendations for you</div>
             </div>
             <div style={{display:'flex', flexDirection:'row'}}>
                 {randomRecipe?.map((r)=> <RandomRecipe onMoveRecipe={()=> onMoveRecipe(r)} randomRecipe={r} key={r.idDrink}/>)}

@@ -12,9 +12,13 @@ export const RecipeWrapper = styled.div`
 
 export const RandomRecipeImg = styled.img`
   width: 100%;
-  border-radius: 58% 55% 52% 50% / 55% 50% 49% 47%;
+  border-radius: ${({RandomBorder} : {RandomBorder: any}) => RandomBorder};
+  background-image: -webkit-linear-gradient(left, #ECD08C 0%, #ECD08C 100%), -webkit-linear-gradient(left, #ECD08C 0%, #ECD08C 100%);
+  background-image: -moz-linear-gradient(left, #ECD08C 0%, #ECD08C 100%), -moz-linear-gradient(left, #ECD08C 0%, #ECD08C 100%);
+  background-image: -o-linear-gradient(left, #ECD08C 0%, #ECD08C 100%), -o-linear-gradient(left, #ECD08C 0%, #ECD08C 100%);
+  background-image: linear-gradient(to right, #ECD08C 0%, #ECD08C 100%), linear-gradient(to right, #ECD08C 0%, #ECD08C 100%);
   object-fit: contain;
-  padding : 10px;
+  padding : 4px;
 
 `
 

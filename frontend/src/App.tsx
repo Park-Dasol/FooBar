@@ -12,7 +12,7 @@ import {MyCocktailContext} from './utils/cocktailContext'
 import {ICocktail} from './utils/db'
 import { Footer } from './components/Footer/Footer';
 import {About} from './pages/About/About'
-
+import { Contact } from './pages/Contact';
 function App() {
   const [cocktail, setCocktail] = useState<ICocktail>();
   return (
@@ -26,6 +26,7 @@ function App() {
               <Route exact path="/" component={Home} />
               <Route exact path="/About" component={About} />
               <Route exact path="/cocktail" component={Cocktail} />
+              <Route exact path="/contact" component={Contact} />
             </Switch>
             <Footer/>
           </BrowserRouter>

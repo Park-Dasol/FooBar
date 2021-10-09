@@ -1,8 +1,7 @@
 import React , { useState, useEffect  } from 'react';
-import { MainContentLineWrapper, Section, MainContent, FirstTitle, SecondTitle } from '../../styles/home';
+import { MainContentLineWrapper, Section, MainContent, MainGrid, FirstLine, SecondLine,Empty, MainImage, Description } from '../../styles/home';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme} from '../../styles/theme';
-import {ArchedImage} from '../../styles/images';
 import {BASE_URL} from '../../utils/db';
 
 
@@ -42,12 +41,17 @@ export const Greeting = () => {
       <>
         <Section id="greetingSection">
           <MainContentLineWrapper>
-            <MainContent>
-              <FirstTitle>{data?.title.first_line}</FirstTitle>
-              <SecondTitle>{data?.title.second_line}</SecondTitle>
-              <ArchedImage src='/images/main_autumn.jpg' alt="aa" />
-              <p>{data?.description}</p>
-              
+            <MainContent className="container">
+               <MainGrid>
+                <Empty></Empty>
+                <FirstLine>{data?.title.first_line}</FirstLine>
+                <SecondLine>{data?.title.second_line}</SecondLine>
+                <MainImage src='/images/main_autumn.jpg' alt="aa"></MainImage>
+                <Description>
+                  <p>{data?.description}</p>
+                </Description>
+
+               </MainGrid>
             </MainContent>
           </MainContentLineWrapper>
         </Section>

@@ -7,6 +7,7 @@ import {IDrink, BASE_URL, ICocktail} from '../../utils/db'
 import {ArchedCocktail} from '../../styles/images'
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import { lightTheme } from '../../styles/theme';
+import { DetailTitle, DetailWrapper,DetailDescription } from './style';
 
 
 export const Cocktail = () => {
@@ -111,31 +112,31 @@ export const Cocktail = () => {
             <div style={{height: '20%', fontSize:"60px", paddingLeft:"10%"}}>{cocktailDetail?.strDrink}</div>
             <div style={{display:'flex', height:"70%"}}>
               <ArchedCocktail src={cocktailDetail?.strDrinkThumb} alt="" />
-              <div>
-                <div>
-                  <div style={{fontWeight:700}}>Category </div>
-                  <div>{cocktailDetail?.strCategory}</div>
-                </div>
-                <div>
-                  <div style={{fontWeight:700}}>Alcoholic </div>
-                  <div>{cocktailDetail?.strAlcoholic}</div>
-                </div>
-                <div>
-                  <div style={{fontWeight:700}}>IBA Category </div>
-                  <div>{cocktailDetail?.strIBA}</div>
-                </div>
-                <div>
-                  <div style={{fontWeight:700}}>Glass</div> 
-                  <div>{cocktailDetail?.strGlass}</div>
-                </div>
-                <div>
-                  <div style={{fontWeight:700}}>Ingredient </div>
-                  <div>{ingredient}</div>
-                </div>
-                <div>
-                  <div style={{fontWeight:700}}>Recipe </div>
-                  <div>{cocktailDetail?.strInstructions}</div>
-                </div>
+              <div style={{display:'flex', flexDirection:"column", justifyContent:"center"}}>
+                <DetailWrapper>
+                  <DetailTitle >Category </DetailTitle>
+                  <DetailDescription>{cocktailDetail?.strCategory}</DetailDescription>
+                </DetailWrapper>
+                <DetailWrapper>
+                  <DetailTitle >Alcoholic </DetailTitle>
+                  <DetailDescription>{cocktailDetail?.strAlcoholic}</DetailDescription>
+                </DetailWrapper>
+                <DetailWrapper>
+                  <DetailTitle>IBA Category </DetailTitle>
+                  <DetailDescription>{cocktailDetail?.strIBA}</DetailDescription>
+                </DetailWrapper>
+                <DetailWrapper>
+                  <DetailTitle>Glass</DetailTitle> 
+                  <DetailDescription>{cocktailDetail?.strGlass}</DetailDescription>
+                </DetailWrapper>
+                <DetailWrapper>
+                  <DetailTitle>Ingredient </DetailTitle>
+                  <DetailDescription>{ingredient}</DetailDescription>
+                </DetailWrapper>
+                <DetailWrapper>
+                  <DetailTitle >Recipe </DetailTitle>
+                  <DetailDescription>{cocktailDetail?.strInstructions}</DetailDescription>
+                </DetailWrapper>
               </div>
             </div>        
           </MainContentLineWrapper>

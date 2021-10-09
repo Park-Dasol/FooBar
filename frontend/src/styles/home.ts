@@ -17,7 +17,7 @@ export const Section = styled.section`
   color: ${({theme} : {theme: any}) => theme.textColor};
   width: 100%;
   // height: calc(100vh - 60px);
-  height: 100vh;
+  height: 110vh;
   display: flex;
   justify-content: center;
   padding: 0;
@@ -32,6 +32,7 @@ export const MainContentLineWrapper = styled.div`
   height: 100%;
   width: 80%;
   align-items: flex-start;
+  // justify-content:center;
 `;
 
 // 선 없는 wrapper
@@ -39,6 +40,8 @@ export const MainContentWrapper = styled.div`
   background: ${({theme} : {theme: any}) => theme.bgColor};
   color: ${({theme} : {theme: any}) => theme.textColor};
   height: 100%;
+  paddding-top:4.5%;
+  paddding-bottom:4.5%;
   width: 95%;
   // justify-content:center;
   // align-items:center;
@@ -49,8 +52,10 @@ export const MainLineContent = styled.div`
   background: ${({theme} : {theme: any}) => theme.bgColor};
   color: ${({theme} : {theme: any}) => theme.textColor};
   border-bottom : 1px solid ${({theme} : {theme: any}) => theme.borderColor};
+  border-top : 1px solid ${({theme} : {theme: any}) => theme.borderColor};
   width: 100%;
-  height: 95%;
+  height: calc(100vh - 60px);
+;
 `;
 
 // 아래 선없는 content
@@ -58,40 +63,68 @@ export const MainContent = styled.div`
   background: ${({theme} : {theme: any}) => theme.bgColor};
   color: ${({theme} : {theme: any}) => theme.textColor};
   width: 100%;
-  height: calc(100vh - 60px);
+  height: 100%;
   position:relative;
   display: flex;
   flex-direction: column;
   justify:center;
   align-items: center;
-  > div {
-    z-index: 1;
-  }
-  > p {
-    width : 20vw;
-    text-align:center;
-    align-self: flex-end;
-    padding: 10px;
-  }
+  paddding-top:4.5%;
+  paddding-bottom:4.5%;
 `;
 
 
-//title
-export const FirstTitle = styled.div`
+//Grid
+export const MainGrid = styled.div`
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas:
+    " empty empty empty"
+     "ml first mr"
+     "ml second mr"
+     "ml image description";
+    grid-template-columns: 1fr 1.5fr 1fr ;
+    grid-template-rows: 0.5fr 1fr 1fr 6fr;
+`;
+
+export const Empty = styled.div`
+  grid-area: empty;
+`;
+export const FirstLine = styled.div`
+  grid-area: first;
   color: black;
   font-size : 100px;
-  text-align: center;
-  display: inline;
+  text-align:center;
   font-family: mermaid;
-
-  `;
-  
-  export const SecondTitle = styled.div`
-  color: white;
-  display: inline;
-
-  font-size : 100px;
-  text-align: center;
-  font-family: mermaid;
-
 `;
+export const SecondLine = styled.div`
+  grid-area: second;
+  text-shadow: 2px 2px 4px #ddbea9;
+  color: white;
+  font-size : 100px;
+  font-family: mermaid;
+  text-align:center;
+`;
+export const MainImage = styled.img`
+  grid-area: image;
+  border-radius : 500px 500px 0 0;
+  box-shadow : -25px 0px 0px orange;
+  margin-left 25px;
+  width: 100%;
+  object-fit:cover;
+  overflow:hidden;
+`;
+export const Description = styled.div`
+  grid-area: description;
+  white-space:wrap;
+  height:100%;
+  padding: 20px 20px 20px 50px;
+ 
+  display: table; 
+  > p {
+    display: table-cell;
+    vertical-align:middle;
+  }
+`;
+

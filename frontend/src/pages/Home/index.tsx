@@ -15,17 +15,17 @@ export const Home = () => {
 
   function logit() {
     setScrollY(window.pageYOffset);
-    console.log(scrollY, window.innerHeight) 
+    // console.log(scrollY, window.innerHeight) 
   }
 
   useEffect(() => {
     function watchScroll() {
       window.addEventListener("scroll", logit);
-      if (scrollY < window.innerHeight) {
+      if (scrollY < window.innerHeight*1.1) {
         setHeaderTheme(lightTheme)
-      } else if (scrollY < window.innerHeight *2) {
+      } else if (scrollY < window.innerHeight *2.2) {
         setHeaderTheme(whiteTheme)
-      } else if (scrollY < window.innerHeight *3) {
+      } else if (scrollY < window.innerHeight *3.3) {
         setHeaderTheme(lightTheme)
       } else {   
         setHeaderTheme(darkTheme)

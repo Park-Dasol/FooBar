@@ -7,7 +7,8 @@ export const ArchedImage = styled.img`
  box-shadow : -50px 0px 0px orange;
  margin-left 50px;
  width: 30vw;
- max-width: 400px;
+  width: 500px;
+ max-width: 600px;
   position:absolute;
  bottom : 0;
   `;

@@ -35,12 +35,12 @@ export const Random = () => {
         <Section>
           <MainContentWrapper>
            <MainContent style={{display:"flex", flexDirection:"column", justifyContent:"center"}}>
-            <div style={{display:'flex', flexDirection:'column', textAlign:'center'}}>
+            <div style={{display:'flex', flexDirection:'column', textAlign:'center', margin:"50px"}}>
               <div style={{fontSize: '40px', marginTop:'20px'}}>Perfect Sip for Today</div>
               <div style={{fontSize:"20px", marginTop:"20px"}}><GiDiamonds/></div>
               <div style={{fontSize: '25px', marginTop:'20px', marginBottom:"20px"}}>This is our recommendations for you</div>
             </div>
-            <div style={{display:'flex', flexDirection:'row'}}>
+            <div style={{display:'flex', flexDirection:'row', justifyContent :"space-around", width:"80%"}}>
                 {randomRecipe?.map((r)=> <RandomRecipe onMoveRecipe={()=> onMoveRecipe(r)} randomRecipe={r} key={r.idDrink}/>)}
             </div>
            </MainContent>

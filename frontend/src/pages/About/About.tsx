@@ -26,7 +26,7 @@ export const About = () => {
          <Section>
          <MainContentLineWrapper style={{display:'flex'}}>
             <img src={`${process.env.PUBLIC_URL}/images/daco.png`} alt="about" style={{width:"60%", objectFit:'contain', bottom: 0, position: 'relative'}}/>
-            <div style={{fontSize:"70px", margin:"auto"}}>FooBar offers<br/> fun ways of<br/> enjoing<br/> cocktails.</div>
+            <div style={{fontSize:"70px", margin:"auto", textAlign:"center"}}>FooBar offers<br/> fun ways of<br/> enjoing<br/> cocktails.</div>
           </MainContentLineWrapper>
         </Section>
         <Section>

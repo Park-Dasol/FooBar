@@ -4,10 +4,10 @@ import { Section,MainContentLineWrapper,  MainWrapper } from '../../styles/home'
 import SearchBox from '../../components/SearchBox'
 import {useCocktailContext} from '../../utils/cocktailContext';
 import {IDrink, BASE_URL, ICocktail} from '../../utils/db'
-import {ArchedCocktail} from '../../styles/images'
+import {ArchedCocktail} from '../../styles/cocktail'
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import { lightTheme } from '../../styles/theme';
-import { DetailTitle, DetailWrapper,DetailDescription } from './style';
+import { DetailTitle, DetailWrapper,DetailDescription,AutoCompleteSpan, AutoCompleteBox } from './style';
 
 
 export const Cocktail = () => {
@@ -92,18 +92,17 @@ export const Cocktail = () => {
   return (
       <MainWrapper>
          <Section id={'section1'}>
-          <MainContentLineWrapper style={{display:'flex', flexDirection:"row"}}>
+          <MainContentLineWrapper style={{display:'flex', flexDirection:"row",position:"relative"}}>
             <img src={`${process.env.PUBLIC_URL}/images/about.png`} alt="search" style={{height:'100%', objectFit:'contain', bottom: 0, position: 'relative'}}/>
-            <div style={{width: '60%', height:"100%", display:'flex', justifyContent:"center", alignItems:"center", flexDirection:"column"}}>
+            <div style={{width: '60%', height:"100%", flexDirection:"column", position:"absolute", top:"50px", right:"0"}}>
               <SearchBox onChangeSearch={onChangeSearch} onSubmitForm={onSubmitForm} inputValue={inputValue} onFocus={onFocus}/>
-              <div style={{display: autoComplete? 'static' : 'none', width: '100%', maxHeight:'30%', overflowY:'scroll'}}>
+              <AutoCompleteBox style={{display: autoComplete? 'static' : 'none'}}>
                 {autoComplete.map(recom => 
-                  (<li onClick={()=> (setCocktail({id:parseInt(recom.id), name:recom.name}), setInputValue(recom.name), setCocktailDetail(undefined))} key={recom.id} style={{listStyle:'none', height:"20px", cursor:"pointer", marginTop:"3px",marginBottom:"3px"}}>
-                    <span style={{ backgroundColor:"#FADDA2", borderRadius:"50px"}} data-id={parseInt(recom.id)}>{recom.name}</span>
+                  (<li onClick={()=> (setCocktail({id:parseInt(recom.id), name:recom.name}), setInputValue(recom.name), setCocktailDetail(undefined))} key={recom.id} style={{listStyle:'none', height:"25px", cursor:"pointer", margin :"8px", padding :"3px 10px"}}>
+                    <AutoCompleteSpan data-id={parseInt(recom.id)}>{recom.name}</AutoCompleteSpan>
                   </li>)
                 )}
-              </div>
-
+              </AutoCompleteBox>
             </div>
           </MainContentLineWrapper>
         </Section>

@@ -74,7 +74,7 @@ export const MainContent = styled.div`
 `;
 
 
-//Grid
+//Main page Grid
 export const MainGrid = styled.div`
     height: 100%;
     width: 100%;
@@ -84,7 +84,7 @@ export const MainGrid = styled.div`
      "ml first mr"
      "ml second mr"
      "ml image description";
-    grid-template-columns: 1fr 1.5fr 1fr ;
+    grid-template-columns: 1fr 1.2fr 1fr ;
     grid-template-rows: 0.5fr 1fr 1fr 6fr;
 `;
 
@@ -125,6 +125,8 @@ export const Description = styled.div`
   > p {
     display: table-cell;
     vertical-align:middle;
+    line-height: 20px;
   }
 `;
+
 

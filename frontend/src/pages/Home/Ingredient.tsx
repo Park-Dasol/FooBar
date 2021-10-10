@@ -10,7 +10,8 @@ export const Ingredient = () => {
 
   useEffect(() => {
     async function fetchIngredient() {
-      let index = 0
+      // let index = 0
+      const index = Math.floor(Math.random() * 9);
       await fetch(`${BASE_URL}/data/ingredients.json`)
       .then((response) => response.json())
       .then( async (response) => {

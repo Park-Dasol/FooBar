@@ -1,18 +1,5 @@
 import styled from 'styled-components'
 
-
-// search section
-
-
-export const SearchBoxWrapper = styled.div`
-width: 60%;
-flex-direction:column;
-position:absolute;
-top:calc(50vh - 90px);
-right:0;
-`
-
-
 //search detail
 export const DetailWrapper = styled.div`
 display: flex;

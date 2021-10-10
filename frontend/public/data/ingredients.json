@@ -33,9 +33,27 @@
     },
     {
       "id": 6,
-      "name" : "Brandy",
+      "name" : "Beer",
       "backgroundColor" : "#D8A578",
       "fontColor" : "#722F37"
+    },
+    {
+      "id": 7,
+      "name" : "Vermouth",
+      "backgroundColor" : "#F0A07C",
+      "fontColor" : "#4A274F"
+    }, 
+    {
+      "id": 8,
+      "name" : "Cognac",
+      "backgroundColor" : "#EC8B5E",
+      "fontColor" : "#141A46"
+    },
+    {
+      "id": 9,
+      "name" : "Wine",
+      "backgroundColor" : "#4A171E",
+      "fontColor" : "#E2B144"
     }
   ]
 }

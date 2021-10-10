@@ -7,8 +7,8 @@ import {IDrink, BASE_URL, ICocktail} from '../../utils/db'
 import {ArchedCocktail} from '../../styles/cocktail'
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import { lightTheme } from '../../styles/theme';
-import { DetailTitle, DetailWrapper,DetailDescription,SearchBoxWrapper } from './style';
-
+import { DetailTitle, DetailWrapper,DetailDescription } from './style';
+import Loading from '../../components/Loading';
 
 export const Cocktail = () => {
   
@@ -21,6 +21,7 @@ export const Cocktail = () => {
   const [inputValue, setInputValue] =  useState<string>('');
   const { headerTheme, setHeaderTheme } = useHeaderThemeContext()
   
+  const [isLoading, setIsLoading] =  useState<boolean>(true);
 
 
   useEffect(()=> {
@@ -39,6 +40,7 @@ export const Cocktail = () => {
     if (!cocktailDetail) {
       setShowDetail(false)
     }
+    setIsLoading(false)
   }, [cocktailDetail])
 
   useEffect(()=> {
@@ -48,6 +50,9 @@ export const Cocktail = () => {
     }
     window.scrollTo(0, 0);
   }, [])
+
+
+
 
   async function fetchCocktail() {
     await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktail?.id}`)
@@ -68,6 +73,7 @@ export const Cocktail = () => {
   }
 
   const onSubmitForm = useCallback((e)=> {
+    
     e.preventDefault()
     setShowDetail(false)
     setInputValue('')
@@ -75,6 +81,7 @@ export const Cocktail = () => {
     if (cocktail) {
       fetchCocktail()
       setShowDetail(true)
+      setIsLoading(true)
     }
   }, [cocktail, inputValue, autoComplete])
 
@@ -95,18 +102,24 @@ export const Cocktail = () => {
     setCocktail(undefined)
   }, [])
 
+
+
+
+  // if (isLoading) {
+  //   return <Loading/>
+  // }
+
   return (
       <MainWrapper>
+      
+        {isLoading ?   <Loading/> : (
          <Section>
           <MainContentLineWrapper style={{display:'flex', flexDirection:"row",position:"relative"}}>
             <img src={`${process.env.PUBLIC_URL}/images/about.png`} alt="search" style={{height:'100%', objectFit:'contain', bottom: 0, position: 'relative'}}/>
-            {/* <div style={{width: '60%', height:"100%", flexDirection:"column", position:"absolute", top:"50px", right:"0"}}> */}
-            {/* <SearchBoxWrapper className=""> */}
-              {/* <SearchBox onChangeSearch={onChangeSearch} onSubmitForm={onSubmitForm} inputValue={inputValue} onFocus={onFocus} autoComplete={autoComplete} setInputValue={setInputValue} setCocktailDetail={setCocktailDetail}/> */}
               <SearchBox onChangeSearch={onChangeSearch} onSubmitForm={onSubmitForm} inputValue={inputValue}  autoComplete={autoComplete} setInputValue={setInputValue} setCocktailDetail={setCocktailDetail}/>
-            {/* </SearchBoxWrapper> */}
           </MainContentLineWrapper>
         </Section>
+        )}
         <Section style={{display: showDetail? 'flex' : 'none'}} id='section2'>
           <MainContentLineWrapper style={{display:'flex',  flexDirection:'column',justifyContent:'center',}}>
           <MainContent style={{height:"90%", display:'flex',  flexDirection:'column',justifyContent:'center'}}>

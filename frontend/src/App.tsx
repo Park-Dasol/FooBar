@@ -14,10 +14,11 @@ import {About} from './pages/About/About'
 import { Contact } from './pages/Contact';
 import { MyHeaderThemeContext } from './utils/headerContext';
 
+
 function App() {
   const [cocktail, setCocktail] = useState<ICocktail>();
   const [headerTheme, setHeaderTheme] = useState<Itheme>(lightTheme);
-  
+
   return (
       <ThemeProvider theme={lightTheme}>
       <>
@@ -25,15 +26,17 @@ function App() {
         <MyCocktailContext.Provider value= {{ cocktail, setCocktail }}>
           <MyHeaderThemeContext.Provider value= {{ headerTheme, setHeaderTheme }}>
             <BrowserRouter>
+
               <Header />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/About" component={About} />
-              <Route exact path="/cocktail" component={Cocktail} />
-              <Route exact path="/contact" component={Contact} />
-            </Switch>
-            <Footer/>
-          </BrowserRouter>
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/About" component={About} />
+                <Route exact path="/cocktail" component={Cocktail} />
+                <Route exact path="/contact" component={Contact} />
+              </Switch>
+              <Footer/>
+
+            </BrowserRouter>
           </MyHeaderThemeContext.Provider>
         </MyCocktailContext.Provider>
       </>

@@ -6,12 +6,12 @@ import { Random } from './Random'
 import { Ingredient } from './Ingredient';
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import { darkTheme, lightTheme, whiteTheme } from '../../styles/theme';
-
+import {useCocktailContext} from '../../utils/cocktailContext';
 
 export const Home = () => {
   const [scrollY, setScrollY] = useState(0);
   const { headerTheme, setHeaderTheme } = useHeaderThemeContext()
-
+  const {cocktail, setCocktail } = useCocktailContext()
 
   function logit() {
     setScrollY(window.pageYOffset);
@@ -37,6 +37,11 @@ export const Home = () => {
     };
   });
 
+
+  useEffect(()=> {
+    setCocktail(undefined)
+    window.scrollTo(0, 0);
+  }, [])
   
 
   return (

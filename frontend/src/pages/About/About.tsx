@@ -4,11 +4,13 @@ import AboutItem from '../../components/AboutItem';
 import {BASE_URL, IAbout} from '../../utils/db';
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import { lightTheme } from '../../styles/theme';
+import {useCocktailContext} from '../../utils/cocktailContext';
+
 
 export const About = () => {
   const [abouts, setAbouts] = useState<IAbout[] | []>([])
   const { headerTheme, setHeaderTheme } = useHeaderThemeContext()
-
+  const {cocktail, setCocktail } = useCocktailContext()
   useEffect(()=> {
     async function fetchAboutItems() {
       await fetch(`${BASE_URL}/data/abouts.json`)
@@ -19,6 +21,8 @@ export const About = () => {
     }
     fetchAboutItems()
     setHeaderTheme(lightTheme)
+    setCocktail(undefined)
+    window.scrollTo(0, 0);
   }, [])
   
   return (

@@ -15,18 +15,18 @@ export const Header = () => {
       <MyHeader>
         <Grid>
           <Item>
-            <Link to="/about">
-            <MenuButton>ABOUT</MenuButton>
+            <Link to="/about" style={linkStyle}>
+            <MenuButton >ABOUT</MenuButton>
             </Link>
-            <Link to="/cocktail">
+            <Link to="/cocktail" style={linkStyle}>
               <MenuButton>COCKTAIL</MenuButton>
             </Link>
-            <Link to="/contact">
+            <Link to="/contact" style={linkStyle}>
             <MenuButton>CONTACT</MenuButton>
             </Link>
           </Item>
           <Item>
-            <Link to="/">
+            <Link to="/" style={linkStyle}>
               <LogoButton>FooBar</LogoButton>
             </Link>
           </Item>
@@ -38,3 +38,10 @@ export const Header = () => {
    
   )
 }
+
+
+const linkStyle = {
+  display:"flex", 
+  justifyContent:"center",  
+  textDecoration:"none"
+};

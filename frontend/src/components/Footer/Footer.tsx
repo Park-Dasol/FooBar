@@ -11,9 +11,9 @@ export const Footer = () => {
         <div style={{position:"absolute", bottom:"10%"}}>@2021 Park Dasol</div>
       </div>
       <div style={{display:"flex", margin:"auto 20px"}}>
-        <div style={{fontSize:"30px"}}><CgInstagram/></div>
-        <div style={{fontSize:"30px"}}><FaGithub/></div>
-        <a href="mailto:dev.dasolpark@gmail.com" style={{fontSize:"30px",  color:"#403d39"}}> <SiGmail/></a>
+        <a href="https://www.instagram.com/imdasolpark/" style={{fontSize:"30px", margin :"10px",  color:"#403d39"}}><CgInstagram/></a>
+        <a href="https://github.com/Park-Dasol" style={{fontSize:"30px", margin :"10px",  color:"#403d39"}}><FaGithub/></a>
+        <a href="mailto:dev.dasolpark@gmail.com" style={{fontSize:"30px",  color:"#403d39", margin :"10px"}}> <SiGmail/></a>
       </div>
     </div>
   )

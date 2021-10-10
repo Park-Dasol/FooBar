@@ -34,7 +34,7 @@ export const Random = () => {
       <>
         <Section>
           <MainContentWrapper>
-           <MainContent style={{display:"flex", flexDirection:"column", justifyContent:"center"}}>
+           <MainContent style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems :"center"}}>
             <div style={{display:'flex', flexDirection:'column', textAlign:'center', margin:"50px"}}>
               <div style={{fontSize: '40px', marginTop:'20px'}}>Perfect Sip for Today</div>
               <div style={{fontSize:"20px", marginTop:"20px"}}><GiDiamonds/></div>

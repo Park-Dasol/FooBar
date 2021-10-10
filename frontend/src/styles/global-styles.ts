@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     }
     body {
         align-items: center;
-        background: ${({theme} : {theme: any}) => theme.bgColor};
+        background: transparent;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -33,4 +33,6 @@ export const GlobalStyle = createGlobalStyle`
     input {
         font-family: NotoSerifRegular;
     }
+
+    
 `;

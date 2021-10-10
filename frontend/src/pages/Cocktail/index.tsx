@@ -1,5 +1,5 @@
 import React,{useCallback, useEffect, useState} from 'react';
-import { Section,MainContentLineWrapper,  MainWrapper } from '../../styles/home';
+import { Section,MainContentLineWrapper,  MainWrapper , MainContent} from '../../styles/home';
 
 import SearchBox from '../../components/SearchBox'
 import {useCocktailContext} from '../../utils/cocktailContext';
@@ -7,7 +7,7 @@ import {IDrink, BASE_URL, ICocktail} from '../../utils/db'
 import {ArchedCocktail} from '../../styles/cocktail'
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import { lightTheme } from '../../styles/theme';
-import { DetailTitle, DetailWrapper,DetailDescription,AutoCompleteSpan, AutoCompleteBox } from './style';
+import { DetailTitle, DetailWrapper,DetailDescription,SearchBoxWrapper } from './style';
 
 
 export const Cocktail = () => {
@@ -20,6 +20,7 @@ export const Cocktail = () => {
   const [showDetail, setShowDetail] =  useState<boolean>(false);
   const [inputValue, setInputValue] =  useState<string>('');
   const { headerTheme, setHeaderTheme } = useHeaderThemeContext()
+  
 
 
   useEffect(()=> {
@@ -45,6 +46,7 @@ export const Cocktail = () => {
     fetchCocktail()
     setShowDetail(true)
     }
+    window.scrollTo(0, 0);
   }, [])
 
   async function fetchCocktail() {
@@ -74,7 +76,7 @@ export const Cocktail = () => {
       fetchCocktail()
       setShowDetail(true)
     }
-  }, [cocktail])
+  }, [cocktail, inputValue, autoComplete])
 
   const onChangeSearch = useCallback( async (e) => {
     setInputValue(e.target.value)
@@ -83,7 +85,11 @@ export const Cocktail = () => {
       return cocktail.name.match(regex)
     })
     setAutoComplete(autoCompleteList)
-  }, [cocktailList])
+
+    if(!e.target.value) {
+      setAutoComplete([])
+    }
+  }, [cocktailList, inputValue])
 
   const onFocus = useCallback(()=> {
     setCocktail(undefined)
@@ -91,24 +97,20 @@ export const Cocktail = () => {
 
   return (
       <MainWrapper>
-         <Section id={'section1'}>
+         <Section>
           <MainContentLineWrapper style={{display:'flex', flexDirection:"row",position:"relative"}}>
             <img src={`${process.env.PUBLIC_URL}/images/about.png`} alt="search" style={{height:'100%', objectFit:'contain', bottom: 0, position: 'relative'}}/>
-            <div style={{width: '60%', height:"100%", flexDirection:"column", position:"absolute", top:"50px", right:"0"}}>
-              <SearchBox onChangeSearch={onChangeSearch} onSubmitForm={onSubmitForm} inputValue={inputValue} onFocus={onFocus}/>
-              <AutoCompleteBox style={{display: autoComplete? 'static' : 'none'}}>
-                {autoComplete.map(recom => 
-                  (<li onClick={()=> (setCocktail({id:parseInt(recom.id), name:recom.name}), setInputValue(recom.name), setCocktailDetail(undefined))} key={recom.id} style={{listStyle:'none', height:"25px", cursor:"pointer", margin :"8px", padding :"3px 10px"}}>
-                    <AutoCompleteSpan data-id={parseInt(recom.id)}>{recom.name}</AutoCompleteSpan>
-                  </li>)
-                )}
-              </AutoCompleteBox>
-            </div>
+            {/* <div style={{width: '60%', height:"100%", flexDirection:"column", position:"absolute", top:"50px", right:"0"}}> */}
+            {/* <SearchBoxWrapper className=""> */}
+              {/* <SearchBox onChangeSearch={onChangeSearch} onSubmitForm={onSubmitForm} inputValue={inputValue} onFocus={onFocus} autoComplete={autoComplete} setInputValue={setInputValue} setCocktailDetail={setCocktailDetail}/> */}
+              <SearchBox onChangeSearch={onChangeSearch} onSubmitForm={onSubmitForm} inputValue={inputValue}  autoComplete={autoComplete} setInputValue={setInputValue} setCocktailDetail={setCocktailDetail}/>
+            {/* </SearchBoxWrapper> */}
           </MainContentLineWrapper>
         </Section>
         <Section style={{display: showDetail? 'flex' : 'none'}} id='section2'>
-          <MainContentLineWrapper style={{display:'flex',  flexDirection:'column',justifyContent:'center'}}>
-            <div style={{height: '20%', fontSize:"60px", paddingLeft:"10%"}}>{cocktailDetail?.strDrink}</div>
+          <MainContentLineWrapper style={{display:'flex',  flexDirection:'column',justifyContent:'center',}}>
+          <MainContent style={{height:"90%", display:'flex',  flexDirection:'column',justifyContent:'center'}}>
+            <div style={{height: '20%', fontSize:"60px", paddingLeft:"10%",display: "table"}}><span style={{display: "table-cell",verticalAlign:"middle"}}>{cocktailDetail?.strDrink}</span></div>
             <div style={{display:'flex', height:"70%"}}>
               <ArchedCocktail src={cocktailDetail?.strDrinkThumb} alt="" />
               <div style={{display:'flex', flexDirection:"column", justifyContent:"center"}}>
@@ -137,7 +139,8 @@ export const Cocktail = () => {
                   <DetailDescription>{cocktailDetail?.strInstructions}</DetailDescription>
                 </DetailWrapper>
               </div>
-            </div>        
+            </div>  
+            </MainContent>      
           </MainContentLineWrapper>
         </Section>
       </MainWrapper>

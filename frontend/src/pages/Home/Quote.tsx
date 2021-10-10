@@ -24,9 +24,8 @@ export const Quote = () => {
     <ThemeProvider theme={darkTheme}>
       <>
         <Section>
-          <MainContent style={{flexDirection:"column", justifyContent:"center", width:"60%"}}>
+          <MainContent style={{display:"flex", flexDirection:"column", justifyContent:"center", width:"60%", alignItems:"center"}}>
             <div style={{fontSize:"30px", marginBottom:"50px"}}><GiDiamonds/></div>
-
             <div style={{fontSize:"75px", textAlign:"center", width:"100%"}}>"{quote?.content}"</div>
             <div style={{fontSize:"30px", marginTop:"60px", alignSelf:"flex-end"}}>- {quote?.person}</div>
           </MainContent>

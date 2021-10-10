@@ -1,5 +1,6 @@
 import React , {useCallback, VFC} from "react";
 import {ContactInputWrap} from './style'
+import {CgArrowLongRight} from  "react-icons/cg"; 
 
 interface Props {
 }
@@ -34,7 +35,7 @@ const ContactForm :VFC<Props>= () => {
           <textarea onBlur={deactivated} name="Message" id="Message"></textarea>
          </ContactInputWrap>
          <button style={{fontSize :"22px", border:"1px solid #6F6C67", color:"#6F6C67", width : "200px", height:"60px", alignSelf:"flex-end", marginRight:"12%"}}>
-           → Send Message
+         <CgArrowLongRight/> Send Message
          </button>
       </form>
     </div>

@@ -65,12 +65,8 @@ export const MainContent = styled.div`
   width: 100%;
   height: 100%;
   position:relative;
-  display: flex;
-  flex-direction: column;
-  justify:center;
-  align-items: center;
-  paddding-top:4.5%;
-  paddding-bottom:4.5%;
+  // paddding-top:2%;
+  // paddding-bottom:7%;
 `;
 
 

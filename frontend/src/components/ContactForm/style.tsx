@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 export const ContactInputWrap = styled.div`
 
-height : 100px;
+height : 80px;
 display:flex;
 flex-direction:column;
 justify-content:center;

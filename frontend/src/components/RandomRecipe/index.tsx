@@ -2,6 +2,8 @@ import React , {useEffect, useState, VFC} from "react";
 import {RecipeWrapper, RandomRecipeImg, RandomRecipeTitle, RandomRecipeDescription, RandomRecipeLink} from '../../styles/randomrecipe';
 import {IDrink} from '../../utils/db';
 import { Link } from "react-router-dom";
+
+
 interface Props {
   randomRecipe: IDrink;
   onMoveRecipe: (e:any) => void;
@@ -23,6 +25,8 @@ const RandomRecipe :VFC<Props>= ({randomRecipe, onMoveRecipe}) => {
     }
     setBorder(RandomBorder)
   },[])
+
+
   return (
     <RecipeWrapper>
       <RandomRecipeImg src={randomRecipe.strDrinkThumb} alt="" RandomBorder={border}/>

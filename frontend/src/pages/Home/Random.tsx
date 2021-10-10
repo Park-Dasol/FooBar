@@ -6,10 +6,11 @@ import {IDrink} from '../../utils/db';
 import RandomRecipe from '../../components/RandomRecipe';
 import {useCocktailContext} from '../../utils/cocktailContext';
 import {GiDiamonds} from 'react-icons/gi'
-
+import Skeleton from '../../components/RandomRecipe/skeleton';
 
 export const Random = () => {
   const [randomRecipe, setRandomRecipe] = useState<IDrink[] | []>([])
+  const [isLoading, setIsLoading] = useState<boolean>(true)
   const {cocktail, setCocktail } = useCocktailContext()
 
   useEffect(() => {
@@ -22,6 +23,13 @@ export const Random = () => {
     }
     if (randomRecipe.length < 3) {
       fetchRecipe()
+    }
+  }, [randomRecipe])
+
+
+  useEffect(()=>{
+    if (randomRecipe.length >=3 ) {
+      setIsLoading(false)
     }
   }, [randomRecipe])
 
@@ -41,7 +49,9 @@ export const Random = () => {
               <div style={{fontSize: '25px', marginTop:'20px', marginBottom:"20px"}}>This is our recommendations for you</div>
             </div>
             <div style={{display:'flex', flexDirection:'row', justifyContent :"space-around", width:"80%"}}>
-                {randomRecipe?.map((r)=> <RandomRecipe onMoveRecipe={()=> onMoveRecipe(r)} randomRecipe={r} key={r.idDrink}/>)}
+                {isLoading ? new Array(3).fill(1).map((_, i) => {
+                  return <Skeleton key={i} />;
+                }) : randomRecipe?.map((r)=> <RandomRecipe onMoveRecipe={()=> onMoveRecipe(r)} randomRecipe={r} key={r.idDrink}/>)}
             </div>
            </MainContent>
           </MainContentWrapper>

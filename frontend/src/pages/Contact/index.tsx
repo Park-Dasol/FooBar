@@ -25,7 +25,7 @@ export const Contact = () => {
           <MainContentWrapper >
             <MainContent style={{display:"flex"}}>
               <div style={{width:"50%", padding:"5% 5% 8% 5%", display:"flex", flexDirection:"column", justifyContent:"space-around", height :"90%"}}>
-                <div style={{color:"#6F6C67", lineHeight:"22px"}}>Contact Me!<br/>I’d LOVE to hear from You.<br/>Weather you are curious about Foobar or ME.<br/>I am ready to answer any and all questions.</div>
+                <div style={{color:"#dee2e6", lineHeight:"22px"}}>Contact Me!<br/>I’d LOVE to hear from You.<br/>Weather you are curious about Foobar or ME.<br/>I am ready to answer any and all questions.</div>
                 <ContactForm/>
               </div>
               <img src={`${process.env.PUBLIC_URL}/images/pub.png`} alt="about" style={{height:"80%", objectFit:'contain', alignSelf:"center"}}/>

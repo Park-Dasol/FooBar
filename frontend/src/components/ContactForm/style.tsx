@@ -15,12 +15,16 @@ justify-content:center;
   transition : 3s;
   color:white;
   outline : none;
-  font-size : 65px;
+  font-size : 50px;
   font-weight : 300;
 }
 > textarea {
-  font-size : 40px;
+  font-size : 25px;
   height:200px;
+}
+
+& .email {
+  font-size : 30px;
 }
 
 > label {

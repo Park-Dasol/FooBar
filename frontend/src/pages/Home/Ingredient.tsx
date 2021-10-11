@@ -3,7 +3,7 @@ import { MainContentLineWrapper, Section, MainLineContent} from '../../styles/ho
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from '../../styles/theme';
 import {Iingredient, BASE_URL} from '../../utils/db';
-import {IngredientWrapper, IngredientDescription} from '../../styles/ingredient'
+import {IngredientWrapper, IngredientDescription, IngredientImage} from '../../styles/ingredient'
 
 export const Ingredient = () => {
   const [randomIngredient, setRandomIngredient] = useState<Iingredient>()
@@ -36,7 +36,7 @@ export const Ingredient = () => {
         <Section>
           <MainContentLineWrapper style={{display:"flex", alignItems:"center"}}>
             <MainLineContent style={{display:'flex'}}>
-              <img src={`${process.env.PUBLIC_URL}/images/${randomIngredient?.name.toLowerCase()}.jpg`} alt="" style={{width: '50%', height: '100%', overflow : 'hidden', objectFit: 'cover'}} />
+              <IngredientImage src={`${process.env.PUBLIC_URL}/images/${randomIngredient?.name.toLowerCase()}.jpg`} alt="ingredient" />
               <IngredientWrapper ingredient={randomIngredient} style={{padding :"6%"}}>
                 <div style={{margin :"10% 0 3% 5%", fontSize:"60px", height:"10%",}}>{randomIngredient?.name}</div>
                 {/* <div style={{padding :"10%", maxHeight : '80%', overflowY:"auto"}}>{randomIngredient?.description}</div> */}

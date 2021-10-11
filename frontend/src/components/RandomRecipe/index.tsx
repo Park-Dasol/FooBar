@@ -1,5 +1,5 @@
 import React , {useEffect, useState, VFC} from "react";
-import {RecipeWrapper, RandomRecipeImg, RandomRecipeTitle, RandomRecipeDescription, RandomRecipeLink} from '../../styles/randomrecipe';
+import {RandomRecipeDescArea, RecipeWrapper, RandomRecipeImg, RandomRecipeTitle, RandomRecipeDescription, RandomRecipeLink} from '../../styles/randomrecipe';
 import {IDrink} from '../../utils/db';
 import { Link } from "react-router-dom";
 
@@ -13,7 +13,6 @@ const RandomRecipe :VFC<Props>= ({randomRecipe, onMoveRecipe}) => {
   const [border, setBorder] = useState<string>('')
 
   useEffect(()=>{
-
     //image irregular border shape value
     let RandomBorder: string = '';
     for (var i =0 ; i < 4; i++) {
@@ -30,13 +29,14 @@ const RandomRecipe :VFC<Props>= ({randomRecipe, onMoveRecipe}) => {
   return (
     <RecipeWrapper>
       <RandomRecipeImg src={randomRecipe.strDrinkThumb} alt="" RandomBorder={border}/>
-      <hr />
-      <RandomRecipeTitle>{randomRecipe.strDrink}</RandomRecipeTitle>
-      <hr />
-      <RandomRecipeDescription>{randomRecipe.strInstructions}</RandomRecipeDescription>
-      <Link to="/cocktail" onClick={onMoveRecipe}>
-         <button style={{color:"#F2D231", backgroundColor:"transparent", fontWeight:700, padding:"10px"}}>DISCOVER</button>
-      </Link>
+      <RandomRecipeDescArea>
+        <RandomRecipeTitle>{randomRecipe.strDrink}</RandomRecipeTitle>
+        <RandomRecipeDescription>{randomRecipe.strInstructions}</RandomRecipeDescription>
+        <Link to="/cocktail" onClick={onMoveRecipe}>
+          <button style={{color:"#F2D231", backgroundColor:"transparent", fontWeight:700, padding:"10px"}}>DISCOVER</button>
+        </Link>
+
+      </RandomRecipeDescArea>
     </RecipeWrapper>
   )
 }

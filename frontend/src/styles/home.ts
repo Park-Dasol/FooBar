@@ -21,6 +21,10 @@ export const Section = styled.section`
   display: flex;
   justify-content: center;
   padding: 0;
+
+  ${({theme}: {theme: any}) => theme.tablet`
+    height: 100vh;
+  `}
   `;
 
 // 안에 선 있는 wrapper
@@ -55,6 +59,7 @@ export const MainLineContent = styled.div`
   border-top : 1px solid ${({theme} : {theme: any}) => theme.borderColor};
   width: 100%;
   height: calc(100vh - 60px);
+  position: relative;
 ;
 `;
 
@@ -82,6 +87,18 @@ export const MainGrid = styled.div`
      "ml image description";
     grid-template-columns: 1fr 1.2fr 1fr ;
     grid-template-rows: 0.5fr 1fr 1fr 6fr;
+
+    ${({theme}: {theme: any}) => theme.tablet`
+    grid-template-areas:
+    "empty empty"
+     "first first"
+     "second second"
+     "image image"
+     "description description";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 1fr 4fr 3fr;
+  `}
+
 `;
 
 export const Empty = styled.div`
@@ -93,6 +110,7 @@ export const FirstLine = styled.div`
   font-size : 100px;
   text-align:center;
   font-family: mermaid;
+  z-index : 1;
 `;
 export const SecondLine = styled.div`
   grid-area: second;
@@ -101,6 +119,7 @@ export const SecondLine = styled.div`
   font-size : 100px;
   font-family: mermaid;
   text-align:center;
+  z-index : 1;
 `;
 export const MainImage = styled.img`
   grid-area: image;
@@ -110,19 +129,43 @@ export const MainImage = styled.img`
   width: 100%;
   object-fit:cover;
   overflow:hidden;
+
+  ${({theme}: {theme: any}) => theme.tablet`
+    box-shadow : none;
+    border-radius : 0;
+    margin-left :0;
+    width : 100%;
+    height: 100vh;
+    position: absolute;
+    bottom:0;
+    opacity :0.7;
+    z-index : 0;
+    overflow : hidden;
+  `}
+
+
+
 `;
 export const Description = styled.div`
   grid-area: description;
   white-space:wrap;
   height:100%;
   padding: 20px 20px 20px 50px;
- 
+  z-index : 1;
+
   display: table; 
   > p {
     display: table-cell;
     vertical-align:middle;
     line-height: 20px;
   }
+
+  ${({theme}: {theme: any}) => theme.tablet`
+  display: flex; 
+  text-shadow: 2px 2px 4px white;
+  color: black;
+  `}
 `;
+
 
 

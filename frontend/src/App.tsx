@@ -13,6 +13,7 @@ import { Footer } from './components/Footer/Footer';
 import {About} from './pages/About/About'
 import { Contact } from './pages/Contact';
 import { MyHeaderThemeContext } from './utils/headerContext';
+import media from './styles/media';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
   const [headerTheme, setHeaderTheme] = useState<Itheme>(lightTheme);
 
   return (
-      <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={{lightTheme, ...media}}>
       <>
         <GlobalStyle />
         <MyCocktailContext.Provider value= {{ cocktail, setCocktail }}>

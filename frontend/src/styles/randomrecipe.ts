@@ -1,13 +1,36 @@
 
 import styled from 'styled-components'
 
-// section들 담고 있는 wrapper
+
+
+// 3개 레시피 담고 있는 div
+export const RecipesBox = styled.div`
+  display:flex;
+  flex-direction:row;
+  justify-content :space-around;
+  width:80%;
+  ${({theme}: {theme: any}) => theme.tablet`
+    flex-direction:column;
+  `}
+`
+
+
+
+//1개 레시피 담고 있는 div
 export const RecipeWrapper = styled.div`
   width: 20vw;
   height: auto;
-  // margin-left : 35px;
-  // margin-right : 35px;
-  `;
+  & p, & h3 {
+    border-top : 1px solid grey;
+  }
+
+  ${({theme}: {theme: any}) => theme.tablet`
+    display: flex; 
+    width : 100%;
+    margin-top : 2%;
+    margin-bottom : 2%;
+  `}
+`;
 
 
 export const RandomRecipeImg = styled.img`
@@ -20,7 +43,21 @@ export const RandomRecipeImg = styled.img`
   object-fit: contain;
   padding : 4px;
   margin-bottom:10px;
+  ${({theme}: {theme: any}) => theme.tablet`
+    display: flex; 
+    width : 30%;
+    margin-bottom:0;
+  `}
 
+`
+// recipe 설명 부분
+export const RandomRecipeDescArea = styled.div`
+  ${({theme}: {theme: any}) => theme.tablet`
+    display: flex; 
+    flex-direction : column;
+    justify-content:center;
+    padding: 0 20px;
+  `}
 `
 
 export const RandomRecipeTitle = styled.h3`
@@ -34,6 +71,7 @@ padding-right: 10px;
 export const RandomRecipeDescription = styled.p`
 padding : 10px 10px 0px;
 line-height: 18px;
+
 //multiline truncate
 display: -webkit-box;
 -webkit-line-clamp: 4;

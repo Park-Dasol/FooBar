@@ -9,7 +9,7 @@ import {useHeaderThemeContext} from '../../utils/headerContext'
 import { lightTheme } from '../../styles/theme';
 import { DetailTitle, DetailWrapper,DetailDescription } from './style';
 import Loading from '../../components/Loading';
-
+import { ThemeProvider } from 'styled-components';
 export const Cocktail = () => {
   
   const {cocktail, setCocktail } = useCocktailContext()
@@ -110,6 +110,8 @@ export const Cocktail = () => {
   // }
 
   return (
+    <ThemeProvider theme={lightTheme}>
+    <>
       <MainWrapper>
       
         {isLoading ?   <Loading/> : (
@@ -157,5 +159,7 @@ export const Cocktail = () => {
           </MainContentLineWrapper>
         </Section>
       </MainWrapper>
+      </>
+    </ThemeProvider>
   )
 }

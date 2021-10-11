@@ -7,6 +7,7 @@ import RandomRecipe from '../../components/RandomRecipe';
 import {useCocktailContext} from '../../utils/cocktailContext';
 import {GiDiamonds} from 'react-icons/gi'
 import Skeleton from '../../components/RandomRecipe/skeleton';
+import { RecipesBox } from '../../styles/randomrecipe';
 
 export const Random = () => {
   const [randomRecipe, setRandomRecipe] = useState<IDrink[] | []>([])
@@ -48,11 +49,11 @@ export const Random = () => {
               <div style={{fontSize:"20px", marginTop:"20px"}}><GiDiamonds/></div>
               <div style={{fontSize: '25px', marginTop:'20px', marginBottom:"20px"}}>This is our recommendations for you</div>
             </div>
-            <div style={{display:'flex', flexDirection:'row', justifyContent :"space-around", width:"80%"}}>
+            <RecipesBox>
                 {isLoading ? new Array(3).fill(1).map((_, i) => {
                   return <Skeleton key={i} />;
                 }) : randomRecipe?.map((r)=> <RandomRecipe onMoveRecipe={()=> onMoveRecipe(r)} randomRecipe={r} key={r.idDrink}/>)}
-            </div>
+            </RecipesBox>
            </MainContent>
           </MainContentWrapper>
         </Section>

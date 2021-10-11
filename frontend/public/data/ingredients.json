@@ -3,21 +3,21 @@
     {
       "id": 1,
       "name" : "Vodka",
-      "backgroundColor" : "#304560",
-      "fontColor" : "#FEF9F3"
+      "backgroundColor" :"#98c1d9",
+      "fontColor" :  "#304560"
     },
     {
       "id": 2,
       "name" : "Gin",
-      "backgroundColor" : "#304560",
-      "fontColor" : "#FEF9F3"
+      "backgroundColor" : "#f1dac4",
+      "fontColor" : "#304560"
 
     },
     {
       "id": 3,
       "name" : "Rum",
-      "backgroundColor" : "#474973",
-      "fontColor" : "#f1dac4"
+      "backgroundColor" : "#f1dac4",
+      "fontColor" : "#474973"
     },
     {
       "id": 4,
@@ -29,7 +29,7 @@
       "id": 5,
       "name" : "Scotch",
       "backgroundColor" : "#DB9558",
-      "fontColor" : "#FEF9F3"
+      "fontColor" : "#304560"
     },
     {
       "id": 6,

@@ -5,7 +5,7 @@ import {BASE_URL, IAbout} from '../../utils/db';
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import { lightTheme } from '../../styles/theme';
 import {useCocktailContext} from '../../utils/cocktailContext';
-
+import { ThemeProvider } from 'styled-components';
 
 export const About = () => {
   const [abouts, setAbouts] = useState<IAbout[] | []>([])
@@ -26,6 +26,8 @@ export const About = () => {
   }, [])
   
   return (
+    <ThemeProvider theme={lightTheme}>
+      <>
       <MainWrapper>
          <Section>
          <MainContentLineWrapper style={{display:'flex'}}>
@@ -51,5 +53,7 @@ export const About = () => {
           </MainContentLineWrapper>
         </Section>
       </MainWrapper>
+      </>
+    </ThemeProvider>
   )
 }

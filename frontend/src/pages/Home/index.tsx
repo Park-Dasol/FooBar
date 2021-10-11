@@ -20,12 +20,16 @@ export const Home = () => {
 
   useEffect(() => {
     function watchScroll() {
+      let fixVariable = 1.1;
+      if (window.innerWidth <= 768) {
+        fixVariable = 1;
+      }
       window.addEventListener("scroll", logit);
-      if (scrollY < window.innerHeight*1.1) {
+      if (scrollY < window.innerHeight*fixVariable * 1) {
         setHeaderTheme(lightTheme)
-      } else if (scrollY < window.innerHeight *2.2) {
+      } else if (scrollY < window.innerHeight *2 * fixVariable) {
         setHeaderTheme(whiteTheme)
-      } else if (scrollY < window.innerHeight *3.3) {
+      } else if (scrollY < window.innerHeight *3* fixVariable) {
         setHeaderTheme(lightTheme)
       } else {   
         setHeaderTheme(darkTheme)

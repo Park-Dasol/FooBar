@@ -12,7 +12,7 @@ type greetType = {
     first_line : string,
     second_line: string,
   },
-  img : string,
+  image : string,
   description: string,
 };
 
@@ -33,7 +33,6 @@ export const Greeting = () => {
       })
     }
     fetchData()
-    console.log(data)
   }, [])
 
   return (
@@ -46,7 +45,7 @@ export const Greeting = () => {
                 <Empty></Empty>
                 <FirstLine>{data?.title.first_line}</FirstLine>
                 <SecondLine>{data?.title.second_line}</SecondLine>
-                <MainImage src='/images/main_autumn.jpg' alt="aa"></MainImage>
+                <MainImage src={`${process.env.PUBLIC_URL}/images/${data?.image}`} alt="aa"></MainImage>
                 <Description>
                   <p>{data?.description}</p>
                 </Description>

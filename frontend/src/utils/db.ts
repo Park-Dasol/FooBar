@@ -1,5 +1,3 @@
-import { NumberLiteralType } from "typescript"
-
 export const BASE_URL = "http://localhost:3000"
 
 export interface IDrink {

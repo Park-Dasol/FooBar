@@ -3,7 +3,7 @@ import { Section,MainContentLineWrapper,  MainWrapper , MainContent} from '../..
 
 import SearchBox from '../../components/SearchBox'
 import {useCocktailContext} from '../../utils/cocktailContext';
-import {IDrink, BASE_URL, ICocktail} from '../../utils/db'
+import {IDrink, BASE_URL} from '../../utils/db'
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import { lightTheme } from '../../styles/theme';
 import { DetailImgDescWrap, DetailCocktailImg, DetailTitle, DetailWrapper,DetailDescription , SearchBgImg} from './style';

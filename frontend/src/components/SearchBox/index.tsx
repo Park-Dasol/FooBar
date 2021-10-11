@@ -1,9 +1,6 @@
-import React , {VFC, useCallback, useEffect, useState, useRef} from "react";
+import React , {VFC, useCallback} from "react";
 import {useCocktailContext} from '../../utils/cocktailContext';
-import {Link} from 'react-router-dom'
 import {SearchButton, SearchContent, SearchBoxWrapper, SearchInput, AutoCompleteBox, AutoCompleteSpan, SearchForm} from './style'
-import { IDrink } from "../../utils/db";
-import { GiConsoleController } from "react-icons/gi";
 import {CgArrowLongRight} from  "react-icons/cg"; 
 
 interface Props {

@@ -1,4 +1,4 @@
-import React,{useCallback, useEffect, useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import { Section,MainContentLineWrapper,  MainWrapper } from '../../styles/home';
 import AboutItem from '../../components/AboutItem';
 import {BASE_URL, IAbout} from '../../utils/db';

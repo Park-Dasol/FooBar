@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Header} from './components/Header';
 import {Home} from './pages/Home';
 import {Cocktail} from './pages/Cocktail';
 import { ThemeProvider } from 'styled-components';
-import { lightTheme, darkTheme, whiteTheme } from './styles/theme';
+import { lightTheme} from './styles/theme';
 import { GlobalStyle } from './styles/global-styles';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import {MyCocktailContext} from './utils/cocktailContext'

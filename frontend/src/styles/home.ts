@@ -1,8 +1,5 @@
 
 import styled from 'styled-components'
-// import { isPropertySignature } from 'typescript';
-
-
 
 // section들 담고 있는 wrapper
 export const MainWrapper = styled.div`

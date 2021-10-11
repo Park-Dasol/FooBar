@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { MyHeader, Grid, Item, MenuButton, LogoButton} from './style';
-import {Switch, Route} from 'react-router-dom'
 import { Link } from "react-router-dom";
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import { ThemeProvider } from 'styled-components';

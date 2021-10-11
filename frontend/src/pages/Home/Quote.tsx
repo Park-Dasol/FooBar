@@ -1,5 +1,5 @@
 import React , {useEffect, useState}from 'react';
-import { Section, MainContent } from '../../styles/home';
+import { Section } from '../../styles/home';
 import { ThemeProvider } from 'styled-components';
 import { darkTheme } from '../../styles/theme';
 import {BASE_URL, IQuote} from '../../utils/db';

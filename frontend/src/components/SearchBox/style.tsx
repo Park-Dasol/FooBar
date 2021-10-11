@@ -1,26 +1,40 @@
 import styled from 'styled-components'
 
 export const SearchBoxWrapper = styled.div`
-width: 60%;
-position:relative;
-height : 100%;
+  width: 60%;
+  position:relative;
+  height : 100%;
+  ${({theme}: {theme: any}) => theme.tablet`
+    margin : auto;
+    width: 95%;
+  `}
 `
 export const SearchContent = styled.div`
-position:absolute;
-top:calc(50vh - 90px);
-width: 100%;
-transition : 0.75s;
-&.SearchFocused{
-  top:20vh;
-}
+  position:absolute;
+  top:calc(50vh - 90px);
+  width: 100%;
+  transition : 0.75s;
+
+  ${({theme}: {theme: any}) => theme.tablet`
+    top:calc(30vh - 90px);
+  `}
+
+  &.SearchFocused{
+    top:20vh;
+    ${({theme}: {theme: any}) => theme.tablet`
+      top:5vh;
+    `}
+  }
+
+
 `
 export const SearchButton = styled.button`
-width:10%;
-border:solid 1px #d9d9d9;
-color:#d9d9d9; 
-background-color:transparent;
-font-size: xx-large;
-font-weight : 100;
+  width:10%;
+  border:solid 1px #d9d9d9;
+  color:#d9d9d9; 
+  background-color:transparent;
+  font-size: xx-large;
+  font-weight : 100;
 `
 
 
@@ -28,29 +42,37 @@ font-weight : 100;
 
 
 export const SearchForm = styled.form`
-width: 100%;
- border-bottom:solid 1px #d9d9d9;
- padding: 10px;
- display:flex;
- height : 100%;
- font-size: 80px;
-&.SearchFocused{
-  font-size: 50px;
-}
+  width: 100%;
+  border-bottom:solid 1px #d9d9d9;
+  padding: 10px;
+  display:flex;
+  height : 100%;
+  font-size: 80px;
+
+  // &.SearchFocused{
+  //   font-size: 50px;
+  // }
 `
 
 
 export const SearchInput = styled.input`
- width: 90%;
- outline:none; 
- border:none;
- background-color:transparent;
- font-size : 80px;
- transition: 0.75s;
+  width: 90%;
+  outline:none; 
+  border:none;
+  background-color:transparent;
+  font-size : 80px;
+  transition: 0.75s;
+  ${({theme}: {theme: any}) => theme.tablet`
+    font-size: 50px;
+  `}
 
- &.SearchFocused {
-  font-size : 50px;
- }
+
+  &.SearchFocused {
+    font-size : 50px;
+    ${({theme}: {theme: any}) => theme.tablet`
+      font-size: 30px;
+    `}
+  }
 `
 
 export const AutoCompleteBox = styled.div`

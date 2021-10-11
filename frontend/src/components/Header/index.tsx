@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { MenuButton, LogoButton} from '../../styles/button';
-import { MyHeader, Grid, Item} from '../../styles/header';
+import { MyHeader, Grid, Item, MenuButton, LogoButton} from './style';
 import {Switch, Route} from 'react-router-dom'
 import { Link } from "react-router-dom";
 import {useHeaderThemeContext} from '../../utils/headerContext'

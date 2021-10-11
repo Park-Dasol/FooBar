@@ -4,10 +4,9 @@ import { Section,MainContentLineWrapper,  MainWrapper , MainContent} from '../..
 import SearchBox from '../../components/SearchBox'
 import {useCocktailContext} from '../../utils/cocktailContext';
 import {IDrink, BASE_URL, ICocktail} from '../../utils/db'
-import {ArchedCocktail} from '../../styles/cocktail'
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import { lightTheme } from '../../styles/theme';
-import { DetailTitle, DetailWrapper,DetailDescription } from './style';
+import { DetailImgDescWrap, DetailCocktailImg, DetailTitle, DetailWrapper,DetailDescription , SearchBgImg} from './style';
 import Loading from '../../components/Loading';
 import { ThemeProvider } from 'styled-components';
 export const Cocktail = () => {
@@ -103,12 +102,6 @@ export const Cocktail = () => {
   }, [])
 
 
-
-
-  // if (isLoading) {
-  //   return <Loading/>
-  // }
-
   return (
     <ThemeProvider theme={lightTheme}>
     <>
@@ -116,9 +109,9 @@ export const Cocktail = () => {
       
         {isLoading ?   <Loading/> : (
          <Section>
-          <MainContentLineWrapper style={{display:'flex', flexDirection:"row",position:"relative"}}>
-            <img src={`${process.env.PUBLIC_URL}/images/about.png`} alt="search" style={{height:'100%', objectFit:'contain', bottom: 0, position: 'relative'}}/>
-              <SearchBox onChangeSearch={onChangeSearch} onSubmitForm={onSubmitForm} inputValue={inputValue}  autoComplete={autoComplete} setInputValue={setInputValue} setCocktailDetail={setCocktailDetail}/>
+          <MainContentLineWrapper style={{display:'flex', flexDirection:"row"}}>
+            <SearchBgImg src={`${process.env.PUBLIC_URL}/images/about.png`} alt="search" />
+            <SearchBox onChangeSearch={onChangeSearch} onSubmitForm={onSubmitForm} inputValue={inputValue}  autoComplete={autoComplete} setInputValue={setInputValue} setCocktailDetail={setCocktailDetail}/>
           </MainContentLineWrapper>
         </Section>
         )}
@@ -126,8 +119,8 @@ export const Cocktail = () => {
           <MainContentLineWrapper style={{display:'flex',  flexDirection:'column',justifyContent:'center',}}>
           <MainContent style={{height:"90%", display:'flex',  flexDirection:'column',justifyContent:'center'}}>
             <div style={{height: '20%', fontSize:"60px", paddingLeft:"10%",display: "table"}}><span style={{display: "table-cell",verticalAlign:"middle"}}>{cocktailDetail?.strDrink}</span></div>
-            <div style={{display:'flex', height:"70%"}}>
-              <ArchedCocktail src={cocktailDetail?.strDrinkThumb} alt="" />
+            <DetailImgDescWrap >
+              <DetailCocktailImg src={cocktailDetail?.strDrinkThumb} alt="SearchImg" />
               <div style={{display:'flex', flexDirection:"column", justifyContent:"center"}}>
                 <DetailWrapper>
                   <DetailTitle >Category </DetailTitle>
@@ -154,7 +147,7 @@ export const Cocktail = () => {
                   <DetailDescription>{cocktailDetail?.strInstructions}</DetailDescription>
                 </DetailWrapper>
               </div>
-            </div>  
+            </DetailImgDescWrap>  
             </MainContent>      
           </MainContentLineWrapper>
         </Section>

@@ -6,6 +6,7 @@ import {useHeaderThemeContext} from '../../utils/headerContext'
 import { lightTheme } from '../../styles/theme';
 import {useCocktailContext} from '../../utils/cocktailContext';
 import { ThemeProvider } from 'styled-components';
+import { AboutMainImg , AboutIntro, AboutLeftFeatures, AboutRightFeatures} from './style';
 
 export const About = () => {
   const [abouts, setAbouts] = useState<IAbout[] | []>([])
@@ -31,25 +32,20 @@ export const About = () => {
       <MainWrapper>
          <Section>
          <MainContentLineWrapper style={{display:'flex'}}>
-            <img src={`${process.env.PUBLIC_URL}/images/daco.png`} alt="about" style={{width:"60%", objectFit:'contain', bottom: 0, position: 'relative'}}/>
-            <div style={{fontSize:"70px", margin:"auto", textAlign:"center"}}>FooBar offers<br/> fun ways of<br/> enjoing<br/> cocktails.</div>
+            <AboutMainImg src={`${process.env.PUBLIC_URL}/images/daco.png`} alt="about" />
+            <AboutIntro >FooBar offers<br/> fun ways of<br/> enjoing<br/> cocktails.</AboutIntro>
           </MainContentLineWrapper>
         </Section>
         <Section>
           <MainContentLineWrapper style={{display:"flex", flexDirection:"column", justifyContent:"center", paddingLeft:"30px", paddingRight:"30px"}}>
-
-            <div style={{display:"flex", alignSelf:"flex-start"}}>
+            <AboutLeftFeatures >
               <AboutItem about={abouts? abouts[0]: undefined} ></AboutItem>
               <AboutItem about={abouts? abouts[1]: undefined} ></AboutItem>
-
-            </div>
-            <div style={{display:"flex", alignSelf:"flex-end"}}>
+            </AboutLeftFeatures>
+            <AboutRightFeatures style={{display:"flex", alignSelf:"flex-end"}}>
               <AboutItem about={abouts? abouts[2]: undefined} ></AboutItem>
               <AboutItem about={abouts? abouts[3]: undefined} ></AboutItem>
-
-            </div>
-
-
+            </AboutRightFeatures>
           </MainContentLineWrapper>
         </Section>
       </MainWrapper>

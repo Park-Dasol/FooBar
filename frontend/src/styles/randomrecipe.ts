@@ -24,6 +24,12 @@ export const RecipeWrapper = styled.div`
     border-top : 1px solid grey;
   }
 
+  & h3 {
+    ${({theme}: {theme: any}) => theme.tablet`
+    border : 0;
+  `}
+  }
+
   ${({theme}: {theme: any}) => theme.tablet`
     display: flex; 
     width : 100%;

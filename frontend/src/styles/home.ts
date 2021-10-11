@@ -36,6 +36,7 @@ export const MainContentLineWrapper = styled.div`
   height: 100%;
   width: 80%;
   align-items: flex-start;
+  position :relative;
   // justify-content:center;
 `;
 

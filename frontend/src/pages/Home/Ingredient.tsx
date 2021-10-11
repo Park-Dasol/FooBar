@@ -39,7 +39,6 @@ export const Ingredient = () => {
               <IngredientImage src={`${process.env.PUBLIC_URL}/images/${randomIngredient?.name.toLowerCase()}.jpg`} alt="ingredient" />
               <IngredientWrapper ingredient={randomIngredient} style={{padding :"6%"}}>
                 <div style={{margin :"10% 0 3% 5%", fontSize:"60px", height:"10%",}}>{randomIngredient?.name}</div>
-                {/* <div style={{padding :"10%", maxHeight : '80%', overflowY:"auto"}}>{randomIngredient?.description}</div> */}
                 <IngredientDescription >{randomIngredient?.description}</IngredientDescription>
               </IngredientWrapper>
             </MainLineContent>

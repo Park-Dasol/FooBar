@@ -1,5 +1,5 @@
 import React , {useCallback, VFC, useRef } from "react";
-import {ContactInputWrap} from './style'
+import {ContactInputWrap, ContactFormArea} from './style'
 import {CgArrowLongRight} from  "react-icons/cg"; 
 import emailjs from 'emailjs-com';
 import { ToastContainer, toast } from 'react-toastify';
@@ -64,7 +64,7 @@ const ContactForm :VFC<Props>= () => {
   return (
     <div style={{display:"flex", flexDirection:"column"}}>
       <ToastContainer />
-       <form action="" ref={form} onSubmit={sendEmail} style={{width: '100%',display:'flex',flexDirection:"column", justifyContent:"center", marginTop:"10px"}}>
+       <ContactFormArea action="" ref={form} onSubmit={sendEmail}>
          <ContactInputWrap onClick={activated} >
           <label  htmlFor="Name">Name</label>
           <input className="name" autoFocus onBlur={deactivated} type="text" name="user_ame" id="Name"/>
@@ -77,10 +77,10 @@ const ContactForm :VFC<Props>= () => {
           <label  htmlFor="Message">Message</label>
           <textarea onBlur={deactivated} name="message" id="Message"></textarea>
          </ContactInputWrap>
-         <button type="submit" value="Send" style={{fontSize :"22px", border:"1px solid #6F6C67", color:"#6F6C67", width : "200px", height:"60px", alignSelf:"flex-end", marginRight:"12%"}}>
+         <button type="submit" value="Send" style={{fontSize :"22px", border:"1px solid #6F6C67", backgroundColor:"#171613", color:"#6F6C67", width : "200px", height:"60px", alignSelf:"flex-end", marginRight:"8%"}}>
           <CgArrowLongRight/> Send Message
          </button>
-      </form>
+      </ContactFormArea>
     </div>
   )
 }

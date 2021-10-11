@@ -27,8 +27,8 @@ export const GlobalStyle = createGlobalStyle`
         border: none;
         outline: none;
         font-family: NotoSerifRegular;
-        color: ${({theme} : {theme: any}) => theme.bgColor};
-        background-color: ${({theme} : {theme: any}) => theme.textColor};
+        color: ${({theme} : {theme: any}) => theme.textColor};
+        background-color: ${({theme} : {theme: any}) => theme.bgColor};
     }
     input {
         font-family: NotoSerifRegular;

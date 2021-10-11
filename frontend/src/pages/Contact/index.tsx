@@ -5,7 +5,7 @@ import { darkTheme } from '../../styles/theme';
 import ContactForm from '../../components/ContactForm';
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import {useCocktailContext} from '../../utils/cocktailContext';
-
+import { ContactBgImg , ContactFormWrapper} from './style';
 export const Contact = () => {
   const { headerTheme, setHeaderTheme } = useHeaderThemeContext()
   const {cocktail, setCocktail } = useCocktailContext()
@@ -24,11 +24,11 @@ export const Contact = () => {
          <Section>
           <MainContentWrapper >
             <MainContent style={{display:"flex"}}>
-              <div style={{width:"50%", padding:"5% 5% 8% 5%", display:"flex", flexDirection:"column", justifyContent:"space-around", height :"90%"}}>
+              <ContactFormWrapper>
                 <div style={{color:"#dee2e6", lineHeight:"22px"}}>Contact Me!<br/>I’d LOVE to hear from You.<br/>Weather you are curious about Foobar or ME.<br/>I am ready to answer any and all questions.</div>
                 <ContactForm/>
-              </div>
-              <img src={`${process.env.PUBLIC_URL}/images/pub.png`} alt="about" style={{height:"80%", objectFit:'contain', alignSelf:"center"}}/>
+              </ContactFormWrapper>
+              <ContactBgImg src={`${process.env.PUBLIC_URL}/images/pub.png`} alt="contact"/>
             </MainContent>
           </MainContentWrapper>
         </Section>

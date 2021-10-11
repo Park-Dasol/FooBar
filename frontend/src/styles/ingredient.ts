@@ -47,6 +47,7 @@ export const IngredientDescription = styled.div`
   &::-webkit-scrollbar {
     background-color:transparent;
     width:10px
+  
   }
   &::-webkit-scrollbar-thumb {
       background-color:#f7ede2;

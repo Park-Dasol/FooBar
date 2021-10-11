@@ -8,7 +8,7 @@ import styled from 'styled-components'
 export const MainWrapper = styled.div`
   // margin-top: 60px;
   width: 100vw;
-  height: auto;
+  // height: auto;
   `;
 
 // each section
@@ -25,7 +25,7 @@ export const Section = styled.section`
   ${({theme}: {theme: any}) => theme.tablet`
     height: 100vh;
   `}
-  `;
+`;
 
 // 안에 선 있는 wrapper
 export const MainContentLineWrapper = styled.div`

@@ -13,6 +13,10 @@ export const MenuButton = styled.button`
       line-height: 1;
       padding-right: 40px;
       
+      ${({theme}: {theme: any}) => theme.tablet`
+        padding : 0 10px;
+      `}
+      
 `;
 
 export const LogoButton = styled.button`

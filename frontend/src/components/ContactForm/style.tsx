@@ -17,6 +17,7 @@ justify-content:center;
   outline : none;
   font-size : 50px;
   font-weight : 300;
+  z-index : 2;
 }
 > textarea {
   font-size : 25px;
@@ -31,6 +32,11 @@ justify-content:center;
   color:#6F6C67;
   font-size : 15px;
   transition : 1s;
+  z-index : 2;
+
+  ${({theme}: {theme: any}) => theme.tablet`
+    color:#918d88;
+  `}
 }
 
 &.deactive input, &.deactive textarea {
@@ -51,3 +57,14 @@ label:hover {
   cursor:pointer;
 }
 `;
+
+
+
+export const ContactFormArea= styled.form`
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  margin-top:10px;
+
+`

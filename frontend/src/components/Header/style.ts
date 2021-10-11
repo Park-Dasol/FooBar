@@ -11,7 +11,7 @@ export const MyHeader = styled.header`
   left :0px;
   width: 100%;
   height: 60px;
-  z-index: 2;
+  z-index: 5;
   `;
 
 export const Grid = styled.div`

@@ -35,7 +35,6 @@ const RandomRecipe :VFC<Props>= ({randomRecipe, onMoveRecipe}) => {
         <Link to="/cocktail" onClick={onMoveRecipe}>
           <button style={{color:"#F2D231", backgroundColor:"transparent", fontWeight:700, padding:"10px"}}>DISCOVER</button>
         </Link>
-
       </RandomRecipeDescArea>
     </RecipeWrapper>
   )

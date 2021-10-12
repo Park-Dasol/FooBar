@@ -34,15 +34,15 @@
 >
 > 환영문구는 계절별로, 칵테일과 재료, 유명문구는 모두 랜덤으로 제공됩다.
 
-<img src="./screen/labtop/main_greeting.png">
+<img src="./screen/labtop/main_greeting.PNG">
 
-<img src="./screen/labtop/main_random.png">
+<img src="./screen/labtop/main_random.PNG">
 
-<img src="./screen/labtop/main_ingredient.png">
+<img src="./screen/labtop/main_ingredient.PNG">
 
 
 
-<img src="./screen/labtop/main_quote.png">
+<img src="./screen/labtop/main_quote.PNG">
 
 
 
@@ -50,9 +50,9 @@
 
 > Foobar의 기능을 간략히 설명하는 페이지입니다.
 
-<img src="./screen/labtop/about_intro.png">
+<img src="./screen/labtop/about_intro.PNG">
 
-<img src="./screen/labtop/about_features.png">
+<img src="./screen/labtop/about_features.PNG">
 
 
 
@@ -60,11 +60,11 @@
 
 > 칵테일을 검색해 원하는 칵테일을 알아 볼수 있고, 메인페이지의 랜덤 칵테일을 클릭해서 더 자세히 알아 볼 수 있습니다.
 
-<img src="./screen/labtop/cocktail_search.png">
+<img src="./screen/labtop/cocktail_search.PNG">
 
-<img src="./screen/labtop/cocktail_autocomplete.png">
+<img src="./screen/labtop/cocktail_autocomplete.PNG">
 
-<img src="./screen/labtop/cocktail_detail.png">
+<img src="./screen/labtop/cocktail_detail.PNG">
 
 
 
@@ -72,7 +72,9 @@
 
 > 더 자세히 알고 싶다면 개발자에게 직접 이메일을 보낼 수 있습니다.
 
-<img src="./screen/labtop/contact.png">
+<img src="./screen/labtop/contact.PNG">
+
+
 
 
 

@@ -25,7 +25,7 @@ export const Cocktail = () => {
 
   useEffect(()=> {
     async function fetchCocktailList() {
-      await fetch(`${BASE_URL}/data/cocktails.json`)
+      await fetch(`${process.env.PUBLIC_URL}/data/cocktails.json`)
       .then((response) => response.json())
       .then((response) => {
         setCocktailList(response.data)

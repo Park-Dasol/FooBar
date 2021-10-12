@@ -11,7 +11,7 @@ export const Ingredient = () => {
   useEffect(() => {
     async function fetchIngredient() {
       const index = Math.floor(Math.random() * 9);
-      await fetch(`${BASE_URL}/data/ingredients.json`)
+      await fetch(`${process.env.PUBLIC_URL}/data/ingredients.json`)
       .then((response) => response.json())
       .then( async (response) => {
         setRandomIngredient(response.data[index])

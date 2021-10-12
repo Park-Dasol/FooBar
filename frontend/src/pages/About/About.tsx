@@ -14,7 +14,7 @@ export const About = () => {
   const {cocktail, setCocktail } = useCocktailContext()
   useEffect(()=> {
     async function fetchAboutItems() {
-      await fetch(`${BASE_URL}/data/abouts.json`)
+      await fetch(`${process.env.PUBLIC_URL}/data/abouts.json`)
       .then((response) => response.json())
       .then((response) => {
         setAbouts(response.data)

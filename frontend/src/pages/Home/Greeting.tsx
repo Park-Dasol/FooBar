@@ -22,7 +22,7 @@ export const Greeting = () => {
 
   useEffect(() => {
     async function fetchData() {
-      await fetch(`${BASE_URL}/data/greeting.json`)
+      await fetch(`${process.env.PUBLIC_URL}/data/greeting.json`)
       .then((response) => response.json())
       .then((response) => {
         const now : number = new Date().getMonth();

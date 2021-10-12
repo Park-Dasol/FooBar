@@ -10,7 +10,7 @@ export const Quote = () => {
 
   useEffect(() => {
     async function fetchQuote() {
-      await fetch(`${BASE_URL}/data/quotes.json`)
+      await fetch(`${process.env.PUBLIC_URL}/data/quotes.json`)
       .then((response) => response.json())
       .then((response) => {
         const index = Math.floor(Math.random() * 20);

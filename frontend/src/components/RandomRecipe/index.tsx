@@ -33,7 +33,7 @@ const RandomRecipe :VFC<Props>= ({randomRecipe, onMoveRecipe}) => {
         <RandomRecipeTitle>{randomRecipe.strDrink}</RandomRecipeTitle>
         <RandomRecipeDescription>{randomRecipe.strInstructions}</RandomRecipeDescription>
         <Link to="/cocktail" onClick={onMoveRecipe}>
-          <button style={{color:"#F2D231", backgroundColor:"transparent", fontWeight:700, padding:"10px"}}>DISCOVER</button>
+          <button style={{color:"#F2D231", backgroundColor:"transparent", fontWeight:700, padding:"10px", fontFamily:"PTSansRegular"}}>DISCOVER</button>
         </Link>
       </RandomRecipeDescArea>
     </RecipeWrapper>

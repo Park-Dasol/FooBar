@@ -150,6 +150,7 @@ export const Description = styled.div`
   height:100%;
   padding: 20px 20px 20px 50px;
   z-index : 1;
+  font-family : NotoSerifKRRegular;
 
   display: table; 
   > p {

@@ -10,8 +10,8 @@ const AboutItem :VFC<Props>= ({about}) => {
   return (
     <AboutSingleWrap>
       <div style={{fontSize : "25px", fontWeight:400}}>0{about?.id}.</div>
-      <div style={{marginTop:"22px", marginBottom :"10px", fontSize : "18px", fontWeight:600}}>{about?.title}</div>
-      <div style={{fontSize:"18px"}}>{about?.description}</div>
+      <div style={{marginTop:"22px", marginBottom :"10px", fontSize : "18px", fontWeight:600, fontFamily : "PlayfairDisplayMedium"}}>{about?.title}</div>
+      <div style={{fontSize:"18px",  fontFamily : "NotoSerifKRRegular"}}>{about?.description}</div>
     </AboutSingleWrap>
   )
 }

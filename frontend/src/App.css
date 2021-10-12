@@ -42,17 +42,23 @@
   src: url("./assets/font/Mermaid1001.ttf")
 }
 
-
-@font-face {
-  font-family: "roboto-light";         
-  src: url("./assets/font/RobotoSlab-Light.ttf")
-}
-
-@font-face {
-  font-family: "roboto-regular";         
-  src: url("./assets/font/RobotoSlab-Regular.ttf")
-}
 @font-face {
   font-family: "NotoSerifRegular";         
   src: url("./assets/font/NotoSerif-Regular.ttf")
+}
+@font-face {
+  font-family: "NotoSerifKRRegular";         
+  src: url("./assets/font/NotoSerifKR-Regular.otf")
+}
+@font-face {
+  font-family: "PlayfairDisplayMedium";         
+  src: url("./assets/font/PlayfairDisplay-Medium.ttf")
+}
+@font-face {
+  font-family: "PlayfairDisplayRegular";         
+  src: url("./assets/font/PlayfairDisplay-Regular.ttf")
+}
+@font-face {
+  font-family: "PTSansRegular";         
+  src: url("./assets/font/PTSans-Regular.ttf")
 }

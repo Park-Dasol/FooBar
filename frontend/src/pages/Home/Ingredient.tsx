@@ -10,13 +10,11 @@ export const Ingredient = () => {
 
   useEffect(() => {
     async function fetchIngredient() {
-      // let index = 0
       const index = Math.floor(Math.random() * 9);
       await fetch(`${BASE_URL}/data/ingredients.json`)
       .then((response) => response.json())
       .then( async (response) => {
         setRandomIngredient(response.data[index])
-        // console.log(response.data[0])
         await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${response.data[index].name.toLowerCase()}`)
         .then((response) => response.json())
         .then((response) => {

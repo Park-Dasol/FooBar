@@ -34,7 +34,7 @@ export const Item = styled.div`
 export const MenuButton = styled.button`
       background: ${({theme} : {theme: any}) => theme.bgColor};
       color: ${({theme} : {theme: any}) => theme.textColor};
-      font-family: sans-serif, 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial;
+      font-family: NotoSerifRegular, sans-serif, 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial;
       font-weight: 600;
       border: 0;
       border-radius: 3em;
@@ -52,7 +52,7 @@ export const MenuButton = styled.button`
 export const LogoButton = styled.button`
       background: ${({theme} : {theme: any}) => theme.bgColor};
       color: ${({theme} : {theme: any}) => theme.textColor};
-      font-family: sans-serif, 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial;
+      font-family: NotoSerifRegular, sans-serif, 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial;
       font-weight: 500;
       border: 0;
       border-radius: 3em;

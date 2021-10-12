@@ -6,7 +6,7 @@ import {useCocktailContext} from '../../utils/cocktailContext';
 import {IDrink, BASE_URL} from '../../utils/db'
 import {useHeaderThemeContext} from '../../utils/headerContext'
 import { lightTheme } from '../../styles/theme';
-import { DetailImgDescWrap, DetailCocktailImg, DetailTitle, DetailWrapper,DetailDescription , SearchBgImg} from './style';
+import { SearchResultWrapper, DetailImgDescWrap, DetailCocktailImg, DetailTitle, DetailWrapper,DetailDescription , SearchBgImg} from './style';
 import Loading from '../../components/Loading';
 import { ThemeProvider } from 'styled-components';
 export const Cocktail = () => {
@@ -39,7 +39,9 @@ export const Cocktail = () => {
     if (!cocktailDetail) {
       setShowDetail(false)
     }
-    setIsLoading(false)
+    if (cocktailDetail?.strDrinkThumb !==null) {
+      setIsLoading(false)
+    }
   }, [cocktailDetail])
 
   useEffect(()=> {
@@ -97,10 +99,6 @@ export const Cocktail = () => {
     }
   }, [cocktailList, inputValue])
 
-  const onFocus = useCallback(()=> {
-    setCocktail(undefined)
-  }, [])
-
 
   return (
     <ThemeProvider theme={lightTheme}>
@@ -117,8 +115,8 @@ export const Cocktail = () => {
         )}
         <Section style={{display: showDetail? 'flex' : 'none'}} id='section2'>
           <MainContentLineWrapper style={{display:'flex',  flexDirection:'column',justifyContent:'center',}}>
-          <MainContent style={{height:"90%", display:'flex',  flexDirection:'column',justifyContent:'center'}}>
-            <div style={{height: '20%', fontSize:"60px", paddingLeft:"10%",display: "table"}}><span style={{display: "table-cell",verticalAlign:"middle"}}>{cocktailDetail?.strDrink}</span></div>
+          <SearchResultWrapper>
+            <div style={{fontFamily:"PlayfairDisplayMedium", height: '20%', fontSize:"60px", paddingLeft:"10%",display: "table"}}><span style={{display: "table-cell",verticalAlign:"middle"}}>{cocktailDetail?.strDrink}</span></div>
             <DetailImgDescWrap >
               <DetailCocktailImg src={cocktailDetail?.strDrinkThumb} alt="SearchImg" />
               <div style={{display:'flex', flexDirection:"column", justifyContent:"center"}}>
@@ -148,7 +146,7 @@ export const Cocktail = () => {
                 </DetailWrapper>
               </div>
             </DetailImgDescWrap>  
-            </MainContent>      
+            </SearchResultWrapper>      
           </MainContentLineWrapper>
         </Section>
       </MainWrapper>

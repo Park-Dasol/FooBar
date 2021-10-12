@@ -10,12 +10,28 @@ export const SearchBgImg = styled.img`
   `}
 `
 
+//search result 전체 감싸는 div
+export const SearchResultWrapper = styled.div`
+  height:90%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  width: 100%;
+  height: 100%;
+
+  ${({theme}: {theme: any}) => theme.tablet`
+    height:96%;
+  `}
+`
+
+// 결과에서 이미지 뺀 설명부분 감싸는 div
 export const  DetailImgDescWrap = styled.div`
   display:flex;
   height:70%;
   ${({theme}: {theme: any}) => theme.tablet`
     flex-direction : column;
     padding : 0 5%;
+    height:100%;
   `}
 `
 
@@ -30,7 +46,7 @@ export const DetailCocktailImg = styled.img`
   ${({theme}: {theme: any}) => theme.tablet`
     border-radius : 0;
     width: 100%;
-    margin :0 0 5%;
+    margin :2.5% 0;
     height : 30vh;
   `}
 `;
@@ -47,6 +63,7 @@ width : 100%;
 
 export const DetailTitle = styled.div`
 font-weight:700;
+font-family : PlayfairDisplayMedium;
 width: 20%;
 `
 
@@ -55,5 +72,6 @@ export const DetailDescription= styled.div`
   line-break: auto;
   display: inline-block;
   width : 70%;
+  font-family : NotoSerifKRRegular;
  
 `

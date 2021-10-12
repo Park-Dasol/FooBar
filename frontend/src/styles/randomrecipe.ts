@@ -72,6 +72,7 @@ padding-right: 10px;
   font-size: 30px;
   padding-top:5px;
   padding-bottom: 5px;
+  font-family: PlayfairDisplayMedium;
 `
 
 export const RandomRecipeDescription = styled.p`

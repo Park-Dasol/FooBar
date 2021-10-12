@@ -30,8 +30,8 @@ export const GlobalStyle = createGlobalStyle`
         color: ${({theme} : {theme: any}) => theme.textColor};
         background-color: ${({theme} : {theme: any}) => theme.bgColor};
     }
-    input {
-        font-family: NotoSerifRegular;
+    input , textarea{
+        font-family: NotoSerifKRRegular, NotoSerifRegular;
     }
 
     

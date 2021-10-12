@@ -16,6 +16,7 @@ export const AboutIntro = styled.div`
   font-size:70px;
   margin:auto; 
   text-align: center;
+  font-family : PlayfairDisplayMedium;
   ${({theme}: {theme: any}) => theme.tablet`
     position: absolute;
     width :100%;
